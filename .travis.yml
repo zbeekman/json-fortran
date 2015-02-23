@@ -60,7 +60,24 @@ install:
     export PATH="$TRAVIS_BUILD_DIR/robodoc-4.99.41/Source:$PATH") ||
     [[ $DOCS != [yY]* ]]
 
-
 script:
   - echo $BUILD_SCRIPT
   - echo $BUILD_SCRIPT | bash -
+
+after_success:
+  - cd $TRAVIS_BUILD_DIR
+  - $($TRAVIS_SECURE_ENV_VARS) &&
+      [ "$TRAVIS_BRANCH" = "master" ] &&
+        [ "$(ls -a $TRAVIS_BUILD_DIR/documentation)" ] &&
+          git config --global user.name "TRAVIS-CI-for-$(git --no-pager show -s --format='%cn' $TRAVIS_COMMIT)" &&
+          git config --global user.email "$(git --no-pager show -s --format='%ce' $TRAVIS_COMMIT)" &&
+          git clone --branch=gh-pages https://${GH_TOKEN}@github.com/$TRAVIS_REPO_SLUG gh-pages &&
+          cd gh-pages &&
+          if [ -e master ]; then rm -r master; fi &&
+          mkdir master &&
+          for f in ../documentation/*.*; do
+            sed '/[^#]robo_top_of_doc/ s;jsonfortran</a>;jsonfortran master</a>;' $f > master/${f##*/}
+          done &&
+          git add master &&
+          git ci -m "Development documentation updated by travis $TRAVIS_BUILD_NUMBER for $TRAVIS_COMMIT_RANGE"
+          git push origin gh-pages
