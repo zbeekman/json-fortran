@@ -326,3 +326,7 @@ Miscellaneous
 * [json-fortran on Codecov.IO](https://codecov.io/github/jacobwilliams/json-fortran?branch=master)
 
 [top](#json-fortran)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/zbeekman/json-fortran/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
