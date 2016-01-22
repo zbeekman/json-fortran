@@ -27,6 +27,7 @@ All Modules &ndash; JSON-Fortran
     <![endif]-->
     
     <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
 
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
@@ -40,7 +41,7 @@ All Modules &ndash; JSON-Fortran
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -55,7 +56,7 @@ All Modules &ndash; JSON-Fortran
           <ul class="nav navbar-nav">
 				
                 
-            <li><a href="../lists/files.html">Source Files</a></li>
+            <li><a href="../sourcefile/json_module.f90.html">Source File</a></li>
 				
 				
             <li><a href="../lists/modules.html">Modules</a></li>
@@ -68,8 +69,6 @@ All Modules &ndash; JSON-Fortran
 								
             <li><a href="../lists/types.html">Derived Types</a></li>
 				
-				
-            <li><a href="../lists/programs.html">Programs</a></li>
 				
           </ul>
         
@@ -88,52 +87,30 @@ All Modules &ndash; JSON-Fortran
 
     <div class="container">
     
+
       <div class="row">
         <div class="col-lg-12" id='text'>
 			 <h1>Modules</h1>
-			 <table class="table table-striped">
+			 <table class="table">
 			 <thead><tr><th>Module</th><th>Source File</th><th>Description</th></tr></thead>
 			 <tbody>
+             
 			 
-			   <tr><td><a href='../module/jf_test_10_mod.html'>jf_test_10_mod</a></td><td><a href='../sourcefile/jf_test_10.f90.html'>jf_test_10.f90</a></td><td><p>Module for the tenth unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_11_mod.html'>jf_test_11_mod</a></td><td><a href='../sourcefile/jf_test_11.f90.html'>jf_test_11.F90</a></td><td><p>Module for the 11th unit test to test unicode support if enabled.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_12_mod.html'>jf_test_12_mod</a></td><td><a href='../sourcefile/jf_test_12.f90.html'>jf_test_12.f90</a></td><td><p>Module for the 12th unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_13_mod.html'>jf_test_13_mod</a></td><td><a href='../sourcefile/jf_test_13.f90.html'>jf_test_13.f90</a></td><td><p>Module for the 13th unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_14_mod.html'>jf_test_14_mod</a></td><td><a href='../sourcefile/jf_test_14.f90.html'>jf_test_14.f90</a></td><td><p>Module for the 14th unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_1_mod.html'>jf_test_1_mod</a></td><td><a href='../sourcefile/jf_test_1.f90.html'>jf_test_1.f90</a></td><td><p>Module for the first unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_2_mod.html'>jf_test_2_mod</a></td><td><a href='../sourcefile/jf_test_2.f90.html'>jf_test_2.f90</a></td><td><p>Module for the second unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_3_mod.html'>jf_test_3_mod</a></td><td><a href='../sourcefile/jf_test_3.f90.html'>jf_test_3.f90</a></td><td><p>Module for the third unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_4_mod.html'>jf_test_4_mod</a></td><td><a href='../sourcefile/jf_test_4.f90.html'>jf_test_4.f90</a></td><td><p>Module for the forth unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_5_mod.html'>jf_test_5_mod</a></td><td><a href='../sourcefile/jf_test_5.f90.html'>jf_test_5.f90</a></td><td><p>Module for the fifth unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_6_mod.html'>jf_test_6_mod</a></td><td><a href='../sourcefile/jf_test_6.f90.html'>jf_test_6.f90</a></td><td><p>Module for the sixth unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_7_mod.html'>jf_test_7_mod</a></td><td><a href='../sourcefile/jf_test_7.f90.html'>jf_test_7.f90</a></td><td><p>Module for the seventh unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_8_mod.html'>jf_test_8_mod</a></td><td><a href='../sourcefile/jf_test_8.f90.html'>jf_test_8.f90</a></td><td><p>Module for the eighth unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/jf_test_9_mod.html'>jf_test_9_mod</a></td><td><a href='../sourcefile/jf_test_9.f90.html'>jf_test_9.f90</a></td><td><p>Module for the ninth unit test.</p></td></tr>
-			 
-			   <tr><td><a href='../module/json_module.html'>json_module</a></td><td><a href='../sourcefile/json_module.f90.html'>json_module.F90</a></td><td><p>A Fortran 2008 <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> (JavaScript Object Notation) <abbr title="Application Programming Interface: a set of routines, protocols, and tools for building software applications">API</abbr>.</p></td></tr>
+			   <tr class="active"><td><a href='../module/json_module.html'>json_module</a></td><td><a href='../sourcefile/json_module.f90.html'>json_module.F90</a></td><td><p>A Fortran 2008 <abbr title="JavaScript Object Notation--A human friendly syntax for storing and exchanging data">JSON</abbr> (JavaScript Object Notation) <abbr title="Application Programming Interface--a set of routines, protocols, and tools for building software applications">API</abbr>.</p></td></tr>
+               
+               <!--active-->
 			 
 			 </tbody></table>
+             
         </div>
       </div>
 
     <hr>
     <footer>
         <div class="row">
-        <div class="col-md-6">&copy; 2015 JSON-Fortran was written by Jacob Williams. </div>
-        <div class="col-md-6"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a>.</span></div>
+        <div class="col-md-4">&copy; 2016 </div>
+	<div class="col-md-4"><span class="text-center"> JSON-Fortran was developed by Jacob Williams</span></div>
+        <div class="col-md-4"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a></span></div>
         </div>
         <br>
     </footer>

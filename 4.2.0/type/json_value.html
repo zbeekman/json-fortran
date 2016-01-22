@@ -25,6 +25,7 @@
     <![endif]-->
     
     <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
 
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
@@ -38,7 +39,7 @@
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -53,7 +54,7 @@
           <ul class="nav navbar-nav">
 				
                 
-            <li><a href="../lists/files.html">Source Files</a></li>
+            <li><a href="../sourcefile/json_module.f90.html">Source File</a></li>
 				
 				
             <li><a href="../lists/modules.html">Modules</a></li>
@@ -66,8 +67,6 @@
 								
             <li><a href="../lists/types.html">Derived Types</a></li>
 				
-				
-            <li><a href="../lists/programs.html">Programs</a></li>
 				
           </ul>
         
@@ -114,7 +113,8 @@
   
      <li class="active">json_value</li>
   </ol>
-  </div>
+</div>
+</div>
 </div>
     
   </div>
@@ -122,39 +122,47 @@
   <div class="row">
     <div class="col-lg-3">
     
+<div id="sidebar">
   
   
   
   <div class="panel panel-primary">
-    <div class="panel-heading text-left"><h3 class="panel-title">Variables</h3></div>
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../type/json_value.html#var-previous">previous</a>
-      
-      <a class="list-group-item" href="../type/json_value.html#var-next">next</a>
-      
-      <a class="list-group-item" href="../type/json_value.html#var-parent">parent</a>
-      
-      <a class="list-group-item" href="../type/json_value.html#var-children">children</a>
-      
-      <a class="list-group-item" href="../type/json_value.html#var-tail">tail</a>
-      
-      <a class="list-group-item" href="../type/json_value.html#var-name">name</a>
-      
-      <a class="list-group-item" href="../type/json_value.html#var-dbl_value">dbl_value</a>
-      
-      <a class="list-group-item" href="../type/json_value.html#var-log_value">log_value</a>
-      
-      <a class="list-group-item" href="../type/json_value.html#var-str_value">str_value</a>
-      
-      <a class="list-group-item" href="../type/json_value.html#var-int_value">int_value</a>
-      
-      <a class="list-group-item" href="../type/json_value.html#var-var_type">var_type</a>
-      
-      <a class="list-group-item" href="../type/json_value.html#var-n_children">n_children</a>
-      
+    <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars">Variables</a></h3></div>
+    <div id="vars" class="panel-collapse collapse">
+      <div class="list-group">
+        
+        <a class="list-group-item" href="../type/json_value.html#variable-previous">previous</a>
+        
+        <a class="list-group-item" href="../type/json_value.html#variable-next">next</a>
+        
+        <a class="list-group-item" href="../type/json_value.html#variable-parent">parent</a>
+        
+        <a class="list-group-item" href="../type/json_value.html#variable-children">children</a>
+        
+        <a class="list-group-item" href="../type/json_value.html#variable-tail">tail</a>
+        
+        <a class="list-group-item" href="../type/json_value.html#variable-name">name</a>
+        
+        <a class="list-group-item" href="../type/json_value.html#variable-dbl_value">dbl_value</a>
+        
+        <a class="list-group-item" href="../type/json_value.html#variable-log_value">log_value</a>
+        
+        <a class="list-group-item" href="../type/json_value.html#variable-str_value">str_value</a>
+        
+        <a class="list-group-item" href="../type/json_value.html#variable-int_value">int_value</a>
+        
+        <a class="list-group-item" href="../type/json_value.html#variable-var_type">var_type</a>
+        
+        <a class="list-group-item" href="../type/json_value.html#variable-n_children">n_children</a>
+        
+      </div>
     </div>
   </div>
+  
+  
+  
+  
+  
   
   
   
@@ -179,21 +187,26 @@
   <hr>
   
   <div class="panel panel-default">
-    <div class="panel-heading text-left"><h3 class="panel-title">All Derived Types</h3></div>
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../type/json_file.html">json_file</a>
-      
-      <a class="list-group-item" href="../type/json_value.html">json_value</a>
-      
+    <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#alltypes">All Derived Types</a></h3></div>
+    <div id="alltypes" class="panel-collapse collapse">
+        <div class="list-group">
+          
+          <a class="list-group-item" href="../type/json_file.html">json_file</a>
+          
+          <a class="list-group-item" href="../type/json_value.html">json_value</a>
+          
+        </div>
     </div>
   </div>
   
-  
+</div>
+
     </div>
     
     <div class="col-lg-9" id='text'>
-    <p>Type used to construct the linked-list <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure.
+    <h2>type, public :: json_value<br>sequence</h2>
+    
+    <p>Type used to construct the linked-list <abbr title="JavaScript Object Notation--A human friendly syntax for storing and exchanging data">JSON</abbr> structure.
   Normally, this should always be a pointer variable.</p>
 <h1 id="example">Example</h1>
 <p>The following test program:</p>
@@ -211,13 +224,14 @@
 </pre></div>
 
 
-<p>Produces the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file <strong>test.json</strong>:</p>
+<p>Produces the <abbr title="JavaScript Object Notation--A human friendly syntax for storing and exchanging data">JSON</abbr> file <strong>test.json</strong>:</p>
 <div class="codehilite"><pre>    <span class="p">{</span>
       <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1805</span><span class="p">,</span>
       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">0.1E+1</span>
     <span class="p">}</span>
 </pre></div>
     <br>
+    
     
     <section>
     <h2>Components</h2>
@@ -237,7 +251,7 @@
   
 <tr>
   
-  <td><a class="anchor" name="var-previous"></a>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-previous"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
   
   <td>private,</td>
   <td>pointer</td><td>::</td>
@@ -251,7 +265,7 @@
   
 <tr>
   
-  <td><a class="anchor" name="var-next"></a>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-next"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
   
   <td>private,</td>
   <td>pointer</td><td>::</td>
@@ -265,7 +279,7 @@
   
 <tr>
   
-  <td><a class="anchor" name="var-parent"></a>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-parent"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
   
   <td>private,</td>
   <td>pointer</td><td>::</td>
@@ -279,7 +293,7 @@
   
 <tr>
   
-  <td><a class="anchor" name="var-children"></a>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-children"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
   
   <td>private,</td>
   <td>pointer</td><td>::</td>
@@ -293,7 +307,7 @@
   
 <tr>
   
-  <td><a class="anchor" name="var-tail"></a>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-tail"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
   
   <td>private,</td>
   <td>pointer</td><td>::</td>
@@ -307,7 +321,7 @@
   
 <tr>
   
-  <td><a class="anchor" name="var-name"></a>character(kind=CK,len=:),</td>
+  <td><span class="anchor" id="variable-name"></span>character(kind=CK,len=:),</td>
   
   <td>private,</td>
   <td>allocatable</td><td>::</td>
@@ -321,7 +335,7 @@
   
 <tr>
   
-  <td><a class="anchor" name="var-dbl_value"></a>real(kind=RK),</td>
+  <td><span class="anchor" id="variable-dbl_value"></span>real(kind=RK),</td>
   
   <td>private,</td>
   <td>allocatable</td><td>::</td>
@@ -335,7 +349,7 @@
   
 <tr>
   
-  <td><a class="anchor" name="var-log_value"></a>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-log_value"></span>logical(kind=LK),</td>
   
   <td>private,</td>
   <td>allocatable</td><td>::</td>
@@ -349,7 +363,7 @@
   
 <tr>
   
-  <td><a class="anchor" name="var-str_value"></a>character(kind=CK,len=:),</td>
+  <td><span class="anchor" id="variable-str_value"></span>character(kind=CK,len=:),</td>
   
   <td>private,</td>
   <td>allocatable</td><td>::</td>
@@ -363,7 +377,7 @@
   
 <tr>
   
-  <td><a class="anchor" name="var-int_value"></a>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-int_value"></span>integer(kind=IK),</td>
   
   <td>private,</td>
   <td>allocatable</td><td>::</td>
@@ -377,7 +391,7 @@
   
 <tr>
   
-  <td><a class="anchor" name="var-var_type"></a>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-var_type"></span>integer(kind=IK),</td>
   
   <td>private</td>
   <td></td><td>::</td>
@@ -391,7 +405,7 @@
   
 <tr>
   
-  <td><a class="anchor" name="var-n_children"></a>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-n_children"></span>integer(kind=IK),</td>
   
   <td>private</td>
   <td></td><td>::</td>
@@ -414,7 +428,7 @@
     
     
     <section>
-    <h2><a class="anchor" name="src"></a>Source Code</h2>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre>    <span class="k">type</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">json_value</span>
 
         <span class="c">!force the constituents to be stored contiguously</span>
@@ -454,8 +468,9 @@
     <hr>
     <footer>
         <div class="row">
-        <div class="col-md-6">&copy; 2015 JSON-Fortran was written by Jacob Williams. </div>
-        <div class="col-md-6"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a>.</span></div>
+        <div class="col-md-4">&copy; 2016 </div>
+	<div class="col-md-4"><span class="text-center"> JSON-Fortran was developed by Jacob Williams</span></div>
+        <div class="col-md-4"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a></span></div>
         </div>
         <br>
     </footer>
