@@ -25,6 +25,7 @@
     <![endif]-->
     
     <script src="../../js/jquery-2.1.3.min.js"></script>
+    <script src="../../js/svg-pan-zoom.min.js"></script>
 
     
     <script src="../../tipuesearch/tipuesearch_content.js"></script>
@@ -38,7 +39,7 @@
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -52,10 +53,10 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
 				
-            <li><a href='../../page/index.html'>Additional Documentation</a></li>
+            <li><a href='../../page/index.html'>Other Docs</a></li>
 				
                 
-            <li><a href="../../sourcefile/json_module.f90.html">Source File</a></li>
+            <li><a href="../../lists/files.html">Source Files</a></li>
 				
 				
             <li><a href="../../lists/modules.html">Modules</a></li>
@@ -68,6 +69,8 @@
 								
             <li><a href="../../lists/types.html">Derived Types</a></li>
 				
+				
+            <li><a href="../../lists/programs.html">Programs</a></li>
 				
           </ul>
         
@@ -94,16 +97,19 @@
       <ul class="list-inline" style="margin-bottom:0px; display:inline">
          
          
+<!--
         
+-->
       </ul>
         <ol class="breadcrumb in-well">
       
-         <li><a href='../../page/index.html'>Additional Documentation</a></li>
+         <li><a href='../../page/index.html'>Other Docs</a></li>
       
          <li><a href='../../page/development-resources/index.html'>Development Resources</a></li>
       
          <li class="active">.travis.yml</li>
       </ol>
+    </div>
     </div>
     </div>
   </div>
@@ -113,7 +119,7 @@
     <div class="col-lg-3">
         <div class="well toc">
           <ul class="nav nav-stacked nav-pills">
-            <li role="presentation" class="title"><a href='../../page/index.html'>Additional Documentation</a></li>
+            <li role="presentation" class="title"><a href='../../page/index.html'>Other Docs</a></li>
           </ul>
           <hr>
           <ul class="nav nav-stacked nav-pills">
@@ -184,9 +190,9 @@
     <div class="col-lg-9" id='text'>
         <p>This is the
 <a href="https://travis-ci.org/jacobwilliams/json-fortran">Travis-CI</a> script
-used to perform continuous integration testing for <abbr title="JavaScript Object Notation--A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran, and
+used to perform continuous integration testing for <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran, and
 trigger automatic documentation deployment.</p>
-<div class="codehilite"><pre><span class="n">language</span><span class="o">:</span> <span class="n">python</span>
+<div class="codehilite"><pre><span></span><span class="n">language</span><span class="o">:</span> <span class="n">python</span>
 
 <span class="n">python</span><span class="o">:</span>
   <span class="o">-</span> <span class="mf">2.7</span>
@@ -210,11 +216,12 @@ trigger automatic documentation deployment.</p>
       <span class="o">-</span> <span class="n">binutils</span>
       <span class="o">-</span> <span class="n">cmake</span>
       <span class="o">-</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span>
+      <span class="o">-</span> <span class="n">graphviz</span>
 
 <span class="err">#</span> <span class="n">Build</span> <span class="n">matrix</span><span class="o">:</span> <span class="n">Run</span> <span class="n">the</span> <span class="n">three</span> <span class="n">build</span> <span class="n">systems</span> <span class="n">and</span> <span class="n">tests</span> <span class="k">in</span> <span class="n">parallel</span>
 <span class="n">env</span><span class="o">:</span>
   <span class="n">global</span><span class="o">:</span>
-    <span class="o">-</span> <span class="n">CHECK_README_PROGS</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span>
+    <span class="o">-</span> <span class="n">CHECK_README_PROGS</span><span class="o">=</span><span class="s2">&quot;no&quot;</span>
   <span class="n">matrix</span><span class="o">:</span>
       <span class="err">#</span> <span class="n">CMake</span> <span class="n">build</span> <span class="k">with</span> <span class="n">unit</span> <span class="n">tests</span><span class="o">,</span> <span class="n">no</span> <span class="n">documentation</span><span class="o">,</span> <span class="k">with</span> <span class="n">coverage</span> <span class="n">analysis</span>
       <span class="err">#</span> <span class="n">No</span> <span class="n">unicode</span> <span class="n">so</span> <span class="n">that</span> <span class="n">coverage</span> <span class="n">combined</span> <span class="k">with</span> <span class="n">the</span> <span class="n">build</span> <span class="n">script</span> <span class="n">will</span> <span class="n">cover</span> <span class="n">unicode</span>
@@ -252,6 +259,7 @@ trigger automatic documentation deployment.</p>
 <span class="s2">      rm f90split.f90</span>
 <span class="s2">    fi</span>
 <span class="s2">  - pip install --upgrade pygooglechart</span>
+<span class="s2">  - pip install --upgrade graphviz</span>
 <span class="s2">  - (pip install --upgrade FoBiS.py &amp;&amp; FoBiS.py --version)</span>
 <span class="s2">  - (pip install --upgrade ford &amp;&amp; ford --version)</span>
 <span class="s2">  - (pip install --upgrade git+https://github.com/dmeranda/demjson.git &amp;&amp; jsonlint --version)</span>
@@ -312,8 +320,9 @@ browser's back button to navigate back to
     <hr>
     <footer>
         <div class="row">
-        <div class="col-md-6">&copy; 2015 JSON-Fortran was written by Jacob Williams. </div>
-        <div class="col-md-6"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a>.</span></div>
+        <div class="col-md-4">&copy; 2016 </div>
+	<div class="col-md-4"><span class="text-center"> JSON-Fortran was developed by Jacob Williams</span></div>
+        <div class="col-md-4"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a></span></div>
         </div>
         <br>
     </footer>

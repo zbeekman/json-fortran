@@ -25,6 +25,7 @@
     <![endif]-->
     
     <script src="../../js/jquery-2.1.3.min.js"></script>
+    <script src="../../js/svg-pan-zoom.min.js"></script>
 
     
     <script src="../../tipuesearch/tipuesearch_content.js"></script>
@@ -38,7 +39,7 @@
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -52,10 +53,10 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
 				
-            <li><a href='../../page/index.html'>Additional Documentation</a></li>
+            <li><a href='../../page/index.html'>Other Docs</a></li>
 				
                 
-            <li><a href="../../sourcefile/json_module.f90.html">Source File</a></li>
+            <li><a href="../../lists/files.html">Source Files</a></li>
 				
 				
             <li><a href="../../lists/modules.html">Modules</a></li>
@@ -68,6 +69,8 @@
 								
             <li><a href="../../lists/types.html">Derived Types</a></li>
 				
+				
+            <li><a href="../../lists/programs.html">Programs</a></li>
 				
           </ul>
         
@@ -94,16 +97,19 @@
       <ul class="list-inline" style="margin-bottom:0px; display:inline">
          
          
+<!--
         
+-->
       </ul>
         <ol class="breadcrumb in-well">
       
-         <li><a href='../../page/index.html'>Additional Documentation</a></li>
+         <li><a href='../../page/index.html'>Other Docs</a></li>
       
          <li><a href='../../page/development-resources/index.html'>Development Resources</a></li>
       
          <li class="active">Contributing Guidelines</li>
       </ol>
+    </div>
     </div>
     </div>
   </div>
@@ -113,7 +119,7 @@
     <div class="col-lg-3">
         <div class="well toc">
           <ul class="nav nav-stacked nav-pills">
-            <li role="presentation" class="title"><a href='../../page/index.html'>Additional Documentation</a></li>
+            <li role="presentation" class="title"><a href='../../page/index.html'>Other Docs</a></li>
           </ul>
           <hr>
           <ul class="nav nav-stacked nav-pills">
@@ -182,8 +188,8 @@
     </div>
     
     <div class="col-lg-9" id='text'>
-        <h1 id="contributing-to-json-fortran">Contributing to <abbr title="JavaScript Object Notation--A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran</h1>
-<p>Looking to contribute something to <a href="https://github.com/jacobwilliams/json-fortran"><abbr title="JavaScript Object Notation--A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran</a>? <strong>Here's how you can help.</strong></p>
+        <h1 id="contributing-to-json-fortran"><a class="toclink" href="#contributing-to-json-fortran">Contributing to <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran</a></h1>
+<p>Looking to contribute something to <a href="https://github.com/jacobwilliams/json-fortran"><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran</a>? <strong>Here's how you can help.</strong></p>
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc/generate-toc again -->
 
 <p><strong>Table of Contents</strong></p>
@@ -196,12 +202,12 @@
 </ul>
 <!-- markdown-toc end -->
 
-<h2 id="key-branches">Key Branches</h2>
+<h2 id="key-branches"><a class="toclink" href="#key-branches">Key Branches</a></h2>
 <ul>
 <li><code>master</code> is the latest, development version and all efforts should be made to keep it stable.</li>
 </ul>
 <p><a href="#contributing-to-json-fortran">top</a></p>
-<h2 id="filing-issues">Filing issues</h2>
+<h2 id="filing-issues"><a class="toclink" href="#filing-issues">Filing issues</a></h2>
 <ul>
 <li>Before filing a new <a href="https://github.com/jacobwilliams/json-fortran/issues">issue</a>, please perform a search to see if that issue has already been filed by someone else, and whether or not a solution exists. If you are experiencing the same issue as one that's already posted, please leave any additional comments and information under the existing issue. If your issue is related to a previous issue, but substantively different, file a new issue and include a mention of the related issue in text, using Jib's <code>#&lt;issue-number&gt;</code> syntax.</li>
 <li>When filing an issue please try to include all of the following information</li>
@@ -212,7 +218,7 @@
 <li>All steps required to reproduce the problem</li>
 </ul>
 <p><a href="#contributing-to-json-fortran">top</a></p>
-<h2 id="outstanding-work">Outstanding Work</h2>
+<h2 id="outstanding-work"><a class="toclink" href="#outstanding-work">Outstanding Work</a></h2>
 <ul>
 <li>Take a look at the <a href="https://github.com/jacobwilliams/json-fortran/issues">issues</a> to see if there is an issue you'd like to help address. <a href="https://github.com/jacobwilliams/json-fortran/issues">Issues</a> with the <a href="https://github.com/jacobwilliams/json-fortran/issues?q=is%3Aopen+is%3Aissue+label%3A%22ready%22">ready label</a> or in the <a href="https://waffle.io/jacobwilliams/json-fortran">ready column on waffle.io</a> are issues that are ready to be dealt with. (i.e., They are not blocked by other dependencies and are higher priority.)</li>
 <li>Increasing the test coverage is another helpful way to
@@ -230,7 +236,7 @@
   <img alt="Codecov.io" src="https://codecov.io/github/jacobwilliams/json-fortran/branch.svg?branch=master"></li>
 </ul>
 <p><a href="#contributing-to-json-fortran">top</a></p>
-<h2 id="pull-requests">Pull Requests</h2>
+<h2 id="pull-requests"><a class="toclink" href="#pull-requests">Pull Requests</a></h2>
 <ul>
 <li>Try not to pollute your pull request with unintended changes&ndash;keep them simple and small</li>
 <li>Pull requests should address one issue at a time, and each commit should be a set of self contained, related changes. If you forget something in a commit, please use <code>git rebase -i &lt;ref&gt;^</code> to amend and/or squash erroneous commits. Here <code>&lt;ref&gt;</code> is the reference to to oldest commit needing to be modified (SHA, or <code>HEAD~4</code>, etc.)</li>
@@ -247,12 +253,12 @@
 <code>jacobwilliams/json-fortran:master</code>. Please <code>rebase</code> your branch on top
 of the latest upstream master. Assuming you are on your branch and you've added the upstream remote by running something like:</li>
 </ul>
-<div class="codehilite"><pre>git remote add upstream git://github.com/jacobwilliams/json-fortran.git
+<div class="codehilite"><pre><span></span>git remote add upstream git://github.com/jacobwilliams/json-fortran.git
 </pre></div>
 
 
 <p>You can accomplish this by running:</p>
-<div class="codehilite"><pre>git rebase upstream/master
+<div class="codehilite"><pre><span></span>git rebase upstream/master
 </pre></div>
 
 
@@ -260,10 +266,10 @@ of the latest upstream master. Assuming you are on your branch and you've added 
 <li>Create a branch in your fork with a descriptive name that also includes the <a href="https://github.com/jacobwilliams/json-fortran/issues">issue number</a>, if applicable. For example, after forking the repo, you can run something like <code>git checkout -b Unicode-support-issue-35</code> before starting work on <a href="https://github.com/jacobwilliams/json-fortran/issues/35">issue #35 : Unicode support</a></li>
 <li>When you're content with your changes, your commits are clean, self contained, with concise descriptive messages, and your changes compile and pass the tests, submit a pull request. We will review your changes, and may ask for certain modifications to be made.</li>
 <li>Pull requests are tested by our <a href="https://travis-ci.org/jacobwilliams/json-fortran">travis-ci</a> continuous integration system, and any errors uncovered will need to be fixed before the pull request can be merged into master.</li>
-<li>The <abbr title="JavaScript Object Notation--A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran library and associated documentation is released under a BSD style <a href="https://github.com/jacobwilliams/json-fortran/blob/master/LICENSE">license</a>.  By submitting a pull request, you are agreeing to release your code under the same license.  Note that code with GPL or other "copyleft" style licenses will not be accepted.</li>
+<li>The <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran library and associated documentation is released under a BSD style <a href="https://github.com/jacobwilliams/json-fortran/blob/master/LICENSE">license</a>.  By submitting a pull request, you are agreeing to release your code under the same license.  Note that code with GPL or other "copyleft" style licenses will not be accepted.</li>
 </ul>
 <p><a href="#contributing-to-json-fortran">top</a></p>
-<h2 id="coding-standards">Coding Standards</h2>
+<h2 id="coding-standards"><a class="toclink" href="#coding-standards">Coding Standards</a></h2>
 <ul>
 <li>Each commit should address a single logical change and code base transformation.</li>
 <li>Each commit <strong>must</strong> compile.</li>
@@ -274,7 +280,7 @@ of the latest upstream master. Assuming you are on your branch and you've added 
 <li>New tests are added to the <code>src/tests</code> directory and are named
   <code>jf_test_&lt;#&gt;.[Ff]90</code>. Each test is a stand alone Fortran program
   which will automatically be compiled and linked against the
-  <abbr title="JavaScript Object Notation--A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran library so long as it follows this naming
+  <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran library so long as it follows this naming
   convention. If any of the tests fail, the test program should exit
   with a non-zero return status, using the <code>stop 2</code> intrinsic
   statement. (The Fortran standard does not require the 'processor' to
@@ -286,7 +292,7 @@ of the latest upstream master. Assuming you are on your branch and you've added 
 <li><em>Do NOT</em> allow your editor to make a bunch of indentation or white space changes, that will introduce non-substantive changes on lines that you have not actually edited.</li>
 <li>The coding style is modern free-form Fortran, consistent with the Fortran 2008 standard.  Note that the two supported compilers (ifort and gfortran) do not currently include the entire Fortran 2008 standard. Therefore, only those language features supported by Gfortran 4.9 and Intel 13.1.0 are currently allowed.  This also means that previous versions of these compilers are not supported, and major changes to the code to support earlier compilers (or Fortran 95) will not be accepted.  At some point in the future (when compiler support has improved), all Fortran 2008 features will be allowed.</li>
 <li>All subroutines and functions <em>must</em> be properly documented.  This includes useful inline comments as well as comment blocks using the <a href="https://github.com/cmacmackin/ford/wiki/Writing-Documentation">FORD</a> syntax.</li>
-<li>For simplicity, <abbr title="JavaScript Object Notation--A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran currently consists of one module file. It is not envisioned that it will ever need to expand to include multiple files (if it does, there would need to be a very good reason).</li>
+<li>For simplicity, <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran currently consists of one module file. It is not envisioned that it will ever need to expand to include multiple files (if it does, there would need to be a very good reason).</li>
 </ul>
 <p><a href="#contributing-to-json-fortran">top</a></p>
 <div class="footnote">
@@ -306,8 +312,9 @@ browser's back button to navigate back to
     <hr>
     <footer>
         <div class="row">
-        <div class="col-md-6">&copy; 2015 JSON-Fortran was written by Jacob Williams. </div>
-        <div class="col-md-6"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a>.</span></div>
+        <div class="col-md-4">&copy; 2016 </div>
+	<div class="col-md-4"><span class="text-center"> JSON-Fortran was developed by Jacob Williams</span></div>
+        <div class="col-md-4"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a></span></div>
         </div>
         <br>
     </footer>
