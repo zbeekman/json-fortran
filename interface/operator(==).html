@@ -70,8 +70,6 @@
             <li><a href="../lists/types.html">Derived Types</a></li>
 				
 				
-            <li><a href="../lists/programs.html">Programs</a></li>
-				
           </ul>
         
         <form action="../search.html" class="navbar-form navbar-right" role="search">
@@ -106,14 +104,14 @@
      
     
     
-    <li><i class="fa fa-code"></i><a href="../src/json_module.F90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/json_string_utilities.F90"> Source File</a></li>
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
-     <li><a href='../sourcefile/json_module.f90.html'>json_module.F90</a></li>
+     <li><a href='../sourcefile/json_string_utilities.f90.html'>json_string_utilities.F90</a></li>
   
-     <li><a href='../module/json_module.html'>json_module</a></li>
+     <li><a href='../module/json_string_utilities.html'>json_string_utilities</a></li>
   
      <li class="active">operator(==)</li>
   </ol>
@@ -167,8 +165,6 @@
     <div id="allprocs" class="panel-collapse collapse">
         <div class="list-group">
           
-          <a class="list-group-item" href="../proc/add_variables_to_input.html">add_variables_to_input</a>
-          
           <a class="list-group-item" href="../proc/annotate_invalid_json.html">annotate_invalid_json</a>
           
           <a class="list-group-item" href="../proc/compact_real_string.html">compact_real_string</a>
@@ -176,6 +172,10 @@
           <a class="list-group-item" href="../proc/default_comp_ucs4.html">default_comp_ucs4</a>
           
           <a class="list-group-item" href="../proc/default_join_ucs4.html">default_join_ucs4</a>
+          
+          <a class="list-group-item" href="../proc/default_neq_ucs4.html">default_neq_ucs4</a>
+          
+          <a class="list-group-item" href="../proc/destroy_json_core.html">destroy_json_core</a>
           
           <a class="list-group-item" href="../proc/destroy_json_data.html">destroy_json_data</a>
           
@@ -185,11 +185,15 @@
           
           <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html">get_current_line_from_file_stream</a>
           
+          <a class="list-group-item" href="../proc/initialize_json_core.html">initialize_json_core</a>
+          
+          <a class="list-group-item" href="../proc/initialize_json_core_in_file.html">initialize_json_core_in_file</a>
+          
           <a class="list-group-item" href="../proc/initialize_json_file.html">initialize_json_file</a>
           
-          <a class="list-group-item" href="../proc/integer_to_string.html">integer_to_string</a>
+          <a class="list-group-item" href="../proc/initialize_json_file_v2.html">initialize_json_file_v2</a>
           
-          <a class="list-group-item" href="../interface/json_add.html">json_add</a>
+          <a class="list-group-item" href="../proc/integer_to_string.html">integer_to_string</a>
           
           <a class="list-group-item" href="../proc/json_check_for_errors.html">json_check_for_errors</a>
           
@@ -197,29 +201,21 @@
           
           <a class="list-group-item" href="../proc/json_clone.html">json_clone</a>
           
+          <a class="list-group-item" href="../interface/json_core.html">json_core</a>
+          
           <a class="list-group-item" href="../proc/json_count.html">json_count</a>
-          
-          <a class="list-group-item" href="../interface/json_create_array.html">json_create_array</a>
-          
-          <a class="list-group-item" href="../interface/json_create_double.html">json_create_double</a>
-          
-          <a class="list-group-item" href="../interface/json_create_integer.html">json_create_integer</a>
-          
-          <a class="list-group-item" href="../interface/json_create_logical.html">json_create_logical</a>
-          
-          <a class="list-group-item" href="../interface/json_create_null.html">json_create_null</a>
-          
-          <a class="list-group-item" href="../interface/json_create_object.html">json_create_object</a>
-          
-          <a class="list-group-item" href="../interface/json_create_string.html">json_create_string</a>
-          
-          <a class="list-group-item" href="../interface/json_destroy.html">json_destroy</a>
           
           <a class="list-group-item" href="../proc/json_failed.html">json_failed</a>
           
           <a class="list-group-item" href="../interface/json_file.html">json_file</a>
           
+          <a class="list-group-item" href="../proc/json_file_check_for_errors.html">json_file_check_for_errors</a>
+          
+          <a class="list-group-item" href="../proc/json_file_clear_exceptions.html">json_file_clear_exceptions</a>
+          
           <a class="list-group-item" href="../proc/json_file_destroy.html">json_file_destroy</a>
+          
+          <a class="list-group-item" href="../proc/json_file_failed.html">json_file_failed</a>
           
           <a class="list-group-item" href="../proc/json_file_get_double.html">json_file_get_double</a>
           
@@ -251,6 +247,8 @@
           
           <a class="list-group-item" href="../proc/json_file_print_2.html">json_file_print_2</a>
           
+          <a class="list-group-item" href="../proc/json_file_print_error_message.html">json_file_print_error_message</a>
+          
           <a class="list-group-item" href="../proc/json_file_print_to_console.html">json_file_print_to_console</a>
           
           <a class="list-group-item" href="../proc/json_file_print_to_string.html">json_file_print_to_string</a>
@@ -269,15 +267,11 @@
           
           <a class="list-group-item" href="../proc/json_file_variable_info.html">json_file_variable_info</a>
           
-          <a class="list-group-item" href="../interface/json_get.html">json_get</a>
-          
           <a class="list-group-item" href="../proc/json_get_array.html">json_get_array</a>
           
           <a class="list-group-item" href="../proc/json_get_array_with_path.html">json_get_array_with_path</a>
           
           <a class="list-group-item" href="../proc/json_get_by_path.html">json_get_by_path</a>
-          
-          <a class="list-group-item" href="../interface/json_get_child.html">json_get_child</a>
           
           <a class="list-group-item" href="../proc/json_get_double.html">json_get_double</a>
           
@@ -323,13 +317,9 @@
           
           <a class="list-group-item" href="../proc/json_initialize.html">json_initialize</a>
           
-          <a class="list-group-item" href="../interface/json_parse.html">json_parse</a>
-          
           <a class="list-group-item" href="../proc/json_parse_file.html">json_parse_file</a>
           
           <a class="list-group-item" href="../proc/json_parse_string.html">json_parse_string</a>
-          
-          <a class="list-group-item" href="../interface/json_print.html">json_print</a>
           
           <a class="list-group-item" href="../proc/json_print_1.html">json_print_1</a>
           
@@ -337,17 +327,9 @@
           
           <a class="list-group-item" href="../proc/json_print_error_message.html">json_print_error_message</a>
           
-          <a class="list-group-item" href="../interface/json_print_to_string.html">json_print_to_string</a>
-          
-          <a class="list-group-item" href="../interface/json_remove.html">json_remove</a>
-          
-          <a class="list-group-item" href="../interface/json_remove_if_present.html">json_remove_if_present</a>
-          
           <a class="list-group-item" href="../proc/json_throw_exception.html">json_throw_exception</a>
           
           <a class="list-group-item" href="../proc/json_traverse.html">json_traverse</a>
-          
-          <a class="list-group-item" href="../interface/json_update.html">json_update</a>
           
           <a class="list-group-item" href="../proc/json_update_double.html">json_update_double</a>
           
@@ -411,15 +393,33 @@
           
           <a class="list-group-item" href="../proc/json_value_get_by_name_chars.html">json_value_get_by_name_chars</a>
           
+          <a class="list-group-item" href="../proc/json_value_get_child.html">json_value_get_child</a>
+          
+          <a class="list-group-item" href="../proc/json_value_is_child_of.html">json_value_is_child_of</a>
+          
           <a class="list-group-item" href="../proc/json_value_print.html">json_value_print</a>
           
           <a class="list-group-item" href="../proc/json_value_remove.html">json_value_remove</a>
           
           <a class="list-group-item" href="../proc/json_value_remove_if_present.html">json_value_remove_if_present</a>
           
+          <a class="list-group-item" href="../proc/json_value_rename.html">json_value_rename</a>
+          
+          <a class="list-group-item" href="../proc/json_value_swap.html">json_value_swap</a>
+          
           <a class="list-group-item" href="../proc/json_value_to_string.html">json_value_to_string</a>
           
+          <a class="list-group-item" href="../proc/json_value_validate.html">json_value_validate</a>
+          
+          <a class="list-group-item" href="../proc/lowercase_character.html">lowercase_character</a>
+          
+          <a class="list-group-item" href="../proc/lowercase_string.html">lowercase_string</a>
+          
+          <a class="list-group-item" href="../proc/name_equal.html">name_equal</a>
+          
           <a class="list-group-item" href="../interface/operator%28SLASHSLASH%29.html">operator(//)</a>
+          
+          <a class="list-group-item" href="../interface/operator%28SLASH%3D%29.html">operator(/=)</a>
           
           <a class="list-group-item" href="../interface/operator%28%3D%3D%29.html">operator(==)</a>
           
@@ -439,45 +439,11 @@
           
           <a class="list-group-item" href="../proc/push_char.html">push_char</a>
           
-          <a class="list-group-item" href="../proc/read_file.html">read_file</a>
-          
           <a class="list-group-item" href="../proc/real_to_string.html">real_to_string</a>
-          
-          <a class="list-group-item" href="../proc/rename.html">rename</a>
           
           <a class="list-group-item" href="../proc/string_to_double.html">string_to_double</a>
           
           <a class="list-group-item" href="../proc/string_to_integer.html">string_to_integer</a>
-          
-          <a class="list-group-item" href="../proc/test_1.html">test_1</a>
-          
-          <a class="list-group-item" href="../proc/test_10.html">test_10</a>
-          
-          <a class="list-group-item" href="../proc/test_11.html">test_11</a>
-          
-          <a class="list-group-item" href="../proc/test_12.html">test_12</a>
-          
-          <a class="list-group-item" href="../proc/test_13.html">test_13</a>
-          
-          <a class="list-group-item" href="../proc/test_14.html">test_14</a>
-          
-          <a class="list-group-item" href="../proc/test_2.html">test_2</a>
-          
-          <a class="list-group-item" href="../proc/test_3.html">test_3</a>
-          
-          <a class="list-group-item" href="../proc/test_4.html">test_4</a>
-          
-          <a class="list-group-item" href="../proc/test_5.html">test_5</a>
-          
-          <a class="list-group-item" href="../proc/test_6.html">test_6</a>
-          
-          <a class="list-group-item" href="../proc/test_7.html">test_7</a>
-          
-          <a class="list-group-item" href="../proc/test_8.html">test_8</a>
-          
-          <a class="list-group-item" href="../proc/test_9.html">test_9</a>
-          
-          <a class="list-group-item" href="../interface/throw_exception.html">throw_exception</a>
           
           <a class="list-group-item" href="../proc/to_array.html">to_array</a>
           
@@ -502,6 +468,8 @@
           <a class="list-group-item" href="../proc/ucs4_comp_default.html">ucs4_comp_default</a>
           
           <a class="list-group-item" href="../proc/ucs4_join_default.html">ucs4_join_default</a>
+          
+          <a class="list-group-item" href="../proc/ucs4_neq_default.html">ucs4_neq_default</a>
           
           <a class="list-group-item" href="../proc/unescape_string.html">unescape_string</a>
           
@@ -603,6 +571,8 @@
           
           <a class="list-group-item" href="../proc/wrap_json_value_remove_if_present.html">wrap_json_value_remove_if_present</a>
           
+          <a class="list-group-item" href="../proc/wrap_json_value_rename.html">wrap_json_value_rename</a>
+          
         </div>
     </div>
   </div>
@@ -613,7 +583,8 @@
     
     <div class="col-lg-9" id='text'>
     <h2>public interface operator(==)</h2>
-	 
+	 <p>Provide a string <code>==</code> operator that works
+ with mixed kinds</p>
      
      <h3>Calls</h3>
      
@@ -633,29 +604,29 @@
 <polygon fill="none" stroke="black" points="73,-48 1,-48 1,-22 73,-22 73,-48"/>
 <text text-anchor="middle" x="37" y="-32.55" font-family="Helvetica,sans-Serif" font-size="10.50">operator(==)</text>
 </g>
-<!-- proc~default_comp_ucs4 -->
-<g id="node2" class="node"><title>proc~default_comp_ucs4</title>
-<a xlink:href="../proc/default_comp_ucs4.html" xlink:title="default_comp_ucs4">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="216,-70 110,-70 110,-44 216,-44 216,-70"/>
-<text text-anchor="middle" x="163" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">default_comp_ucs4</text>
-</a>
-</g>
-<!-- interface~operator(==)&#45;&gt;proc~default_comp_ucs4 -->
-<g id="edge10" class="edge"><title>interface~operator(==)&#45;&gt;proc~default_comp_ucs4</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M73.7831,-41.4225C81.9106,-42.8415 90.7467,-44.3843 99.5934,-45.929"/>
-<polygon fill="black" stroke="black" points="99.096,-49.395 109.549,-47.6673 100.3,-42.4993 99.096,-49.395"/>
-</g>
 <!-- proc~ucs4_comp_default -->
-<g id="node3" class="node"><title>proc~ucs4_comp_default</title>
+<g id="node2" class="node"><title>proc~ucs4_comp_default</title>
 <a xlink:href="../proc/ucs4_comp_default.html" xlink:title="ucs4_comp_default">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="216,-26 110,-26 110,-1.24345e-14 216,-3.55271e-15 216,-26"/>
-<text text-anchor="middle" x="163" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ucs4_comp_default</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="216,-70 110,-70 110,-44 216,-44 216,-70"/>
+<text text-anchor="middle" x="163" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ucs4_comp_default</text>
 </a>
 </g>
 <!-- interface~operator(==)&#45;&gt;proc~ucs4_comp_default -->
-<g id="edge12" class="edge"><title>interface~operator(==)&#45;&gt;proc~ucs4_comp_default</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M73.7831,-28.5775C81.9106,-27.1585 90.7467,-25.6157 99.5934,-24.071"/>
-<polygon fill="black" stroke="black" points="100.3,-27.5007 109.549,-22.3327 99.096,-20.605 100.3,-27.5007"/>
+<g id="edge10" class="edge"><title>interface~operator(==)&#45;&gt;proc~ucs4_comp_default</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M73.7831,-41.4225C81.9106,-42.8415 90.7467,-44.3843 99.5934,-45.929"/>
+<polygon fill="#000000" stroke="#000000" points="99.096,-49.395 109.549,-47.6673 100.3,-42.4993 99.096,-49.395"/>
+</g>
+<!-- proc~default_comp_ucs4 -->
+<g id="node3" class="node"><title>proc~default_comp_ucs4</title>
+<a xlink:href="../proc/default_comp_ucs4.html" xlink:title="default_comp_ucs4">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="216,-26 110,-26 110,-1.24345e-14 216,-3.55271e-15 216,-26"/>
+<text text-anchor="middle" x="163" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">default_comp_ucs4</text>
+</a>
+</g>
+<!-- interface~operator(==)&#45;&gt;proc~default_comp_ucs4 -->
+<g id="edge12" class="edge"><title>interface~operator(==)&#45;&gt;proc~default_comp_ucs4</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M73.7831,-28.5775C81.9106,-27.1585 90.7467,-25.6157 99.5934,-24.071"/>
+<polygon fill="#000000" stroke="#000000" points="100.3,-27.5007 109.549,-22.3327 99.096,-20.605 100.3,-27.5007"/>
 </g>
 <!-- interface~to_unicode -->
 <g id="node4" class="node"><title>interface~to_unicode</title>
@@ -664,39 +635,39 @@
 <text text-anchor="middle" x="285" y="-32.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_unicode</text>
 </a>
 </g>
-<!-- proc~default_comp_ucs4&#45;&gt;interface~to_unicode -->
-<g id="edge6" class="edge"><title>proc~default_comp_ucs4&#45;&gt;interface~to_unicode</title>
-<path fill="none" stroke="black" d="M216.156,-47.4145C224.921,-45.8339 233.906,-44.2137 242.37,-42.6874"/>
-<polygon fill="black" stroke="black" points="243.166,-46.1003 252.386,-40.8811 241.924,-39.2114 243.166,-46.1003"/>
-</g>
 <!-- proc~ucs4_comp_default&#45;&gt;interface~to_unicode -->
-<g id="edge8" class="edge"><title>proc~ucs4_comp_default&#45;&gt;interface~to_unicode</title>
-<path fill="none" stroke="black" d="M216.156,-22.5855C224.921,-24.1661 233.906,-25.7863 242.37,-27.3126"/>
-<polygon fill="black" stroke="black" points="241.924,-30.7886 252.386,-29.1189 243.166,-23.8997 241.924,-30.7886"/>
+<g id="edge6" class="edge"><title>proc~ucs4_comp_default&#45;&gt;interface~to_unicode</title>
+<path fill="none" stroke="#000000" d="M216.156,-47.4145C224.921,-45.8339 233.906,-44.2137 242.37,-42.6874"/>
+<polygon fill="#000000" stroke="#000000" points="243.166,-46.1003 252.386,-40.8811 241.924,-39.2114 243.166,-46.1003"/>
 </g>
-<!-- proc~to_uni_vec -->
-<g id="node5" class="node"><title>proc~to_uni_vec</title>
-<a xlink:href="../proc/to_uni_vec.html" xlink:title="to_uni_vec">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="418,-70 354,-70 354,-44 418,-44 418,-70"/>
-<text text-anchor="middle" x="386" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni_vec</text>
-</a>
-</g>
-<!-- interface~to_unicode&#45;&gt;proc~to_uni_vec -->
-<g id="edge2" class="edge"><title>interface~to_unicode&#45;&gt;proc~to_uni_vec</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M317.513,-42.082C325.977,-43.9256 335.215,-45.938 344.09,-47.871"/>
-<polygon fill="black" stroke="black" points="343.378,-51.2979 353.893,-50.0065 344.867,-44.4583 343.378,-51.2979"/>
+<!-- proc~default_comp_ucs4&#45;&gt;interface~to_unicode -->
+<g id="edge8" class="edge"><title>proc~default_comp_ucs4&#45;&gt;interface~to_unicode</title>
+<path fill="none" stroke="#000000" d="M216.156,-22.5855C224.921,-24.1661 233.906,-25.7863 242.37,-27.3126"/>
+<polygon fill="#000000" stroke="#000000" points="241.924,-30.7886 252.386,-29.1189 243.166,-23.8997 241.924,-30.7886"/>
 </g>
 <!-- proc~to_uni -->
-<g id="node6" class="node"><title>proc~to_uni</title>
+<g id="node5" class="node"><title>proc~to_uni</title>
 <a xlink:href="../proc/to_uni.html" xlink:title="to_uni">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="413,-26 359,-26 359,-1.24345e-14 413,-3.55271e-15 413,-26"/>
-<text text-anchor="middle" x="386" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="413,-70 359,-70 359,-44 413,-44 413,-70"/>
+<text text-anchor="middle" x="386" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni</text>
 </a>
 </g>
 <!-- interface~to_unicode&#45;&gt;proc~to_uni -->
-<g id="edge4" class="edge"><title>interface~to_unicode&#45;&gt;proc~to_uni</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M317.513,-27.918C327.547,-25.7323 338.671,-23.3093 348.985,-21.0627"/>
-<polygon fill="black" stroke="black" points="349.933,-24.4384 358.959,-18.8902 348.443,-17.5988 349.933,-24.4384"/>
+<g id="edge2" class="edge"><title>interface~to_unicode&#45;&gt;proc~to_uni</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M317.513,-42.082C327.547,-44.2677 338.671,-46.6907 348.985,-48.9373"/>
+<polygon fill="#000000" stroke="#000000" points="348.443,-52.4012 358.959,-51.1098 349.933,-45.5616 348.443,-52.4012"/>
+</g>
+<!-- proc~to_uni_vec -->
+<g id="node6" class="node"><title>proc~to_uni_vec</title>
+<a xlink:href="../proc/to_uni_vec.html" xlink:title="to_uni_vec">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="418,-26 354,-26 354,-1.24345e-14 418,-3.55271e-15 418,-26"/>
+<text text-anchor="middle" x="386" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni_vec</text>
+</a>
+</g>
+<!-- interface~to_unicode&#45;&gt;proc~to_uni_vec -->
+<g id="edge4" class="edge"><title>interface~to_unicode&#45;&gt;proc~to_uni_vec</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M317.513,-27.918C325.977,-26.0744 335.215,-24.062 344.09,-22.129"/>
+<polygon fill="#000000" stroke="#000000" points="344.867,-25.5417 353.893,-19.9935 343.378,-18.7021 344.867,-25.5417"/>
 </g>
 </g>
 </svg>
@@ -771,6 +742,8 @@ Nodes of different colours represent the following:
 </g>
 </svg>
 
+Where possible, edges connecting nodes are given different colours to make them
+easier to distinguish in large graphs.
 <h5>Module Graph</h5>
 <p>Solid arrows point from a parent (sub)module to the submodule which is
 descended from it. Dashed arrows point from a module being used to the
@@ -805,7 +778,7 @@ implementation in a submodule of an interface in a parent module.</p>
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-ucs4_comp_default"></span><h3>
-private function <a href='../proc/ucs4_comp_default.html'>ucs4_comp_default</a>(ucs4_str, def_str) result(res)
+private pure elemental function <a href='../proc/ucs4_comp_default.html'>ucs4_comp_default</a>(ucs4_str, def_str) result(res)
     
     
     
@@ -888,7 +861,7 @@ private function <a href='../proc/ucs4_comp_default.html'>ucs4_comp_default</a>(
 
 
        
-       <p>CK==CDK operator.</p>
+       <p><code>CK</code>==<code>CDK</code> operator.</p>
         
 
   </div>
@@ -898,7 +871,7 @@ private function <a href='../proc/ucs4_comp_default.html'>ucs4_comp_default</a>(
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-default_comp_ucs4"></span><h3>
-private function <a href='../proc/default_comp_ucs4.html'>default_comp_ucs4</a>(def_str, ucs4_str) result(res)
+private pure elemental function <a href='../proc/default_comp_ucs4.html'>default_comp_ucs4</a>(def_str, ucs4_str) result(res)
     
     
     
@@ -981,7 +954,7 @@ private function <a href='../proc/default_comp_ucs4.html'>default_comp_ucs4</a>(
 
 
        
-       <p>CDK==CK operator.</p>
+       <p><code>CDK</code>==<code>CK</code> operator.</p>
         
 
   </div>
@@ -995,12 +968,18 @@ private function <a href='../proc/default_comp_ucs4.html'>default_comp_ucs4</a>(
 
     <hr>
     <footer>
-        <div class="row">
+      <div class="row">
         <div class="col-md-4">&copy; 2016 </div>
-	<div class="col-md-4"><span class="text-center"> JSON-Fortran was developed by Jacob Williams</span></div>
-        <div class="col-md-4"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a></span></div>
+        <div class="col-md-4"><span class="text-center"> JSON-Fortran was developed by Jacob Williams</span></div>
+        <div class="col-md-4">
+          <span class="pull-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </span>
         </div>
-        <br>
+      </div>
+      <br>
     </footer>
     </div> <!-- /container -->
 
@@ -1028,6 +1007,6 @@ private function <a href='../proc/default_comp_ucs4.html'>default_comp_ucs4</a>(
         }
       });
     </script>
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </body>
 </html>

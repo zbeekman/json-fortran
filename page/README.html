@@ -70,8 +70,6 @@
             <li><a href="../lists/types.html">Derived Types</a></li>
 				
 				
-            <li><a href="../lists/programs.html">Programs</a></li>
-				
           </ul>
         
         <form action="../search.html" class="navbar-form navbar-right" role="search">
@@ -148,6 +146,11 @@
             </li>
             
             <li role="presentation">
+            <a href='../page/development-resources/codecov.yml.html'>codecov.yml</a>
+            
+            </li>
+            
+            <li role="presentation">
             <a href='../page/development-resources/deploy.sh.html'>deploy.sh</a>
             
             </li>
@@ -186,7 +189,7 @@
     </div>
     
     <div class="col-lg-9" id='text'>
-        <h1 id="json-fortran"><a class="toclink" href="#json-fortran"><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran</a></h1>
+        <h1 id="json-fortran"><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran</h1>
 <p><a href="https://github.com/jacobwilliams/json-fortran/releases/latest"><img alt="GitHub release" src="https://img.shields.io/github/release/jacobwilliams/json-fortran.svg?style=plastic"></a>
 A Fortran 2008 <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> <abbr title="Application Programming Interface: a set of routines, protocols, and tools for building software applications">API</abbr></p>
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc/generate-toc again -->
@@ -207,9 +210,9 @@ A Fortran 2008 <abbr title="JavaScript Object Notation: A human friendly syntax 
 </ul>
 <!-- markdown-toc end -->
 
-<h2 id="status"><a class="toclink" href="#status">Status</a></h2>
+<h2 id="status">Status</h2>
 <p><a href="https://travis-ci.org/jacobwilliams/json-fortran"><img alt="Build Status" src="https://img.shields.io/travis/jacobwilliams/json-fortran/master.svg?style=plastic"></a>
-<a href="https://codecov.io/github/jacobwilliams/json-fortran?branch=master"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/jacobwilliams/json-fortran.svg?style=plastic"></a></p>
+<a href="https://codecov.io/gh/jacobwilliams/json-fortran"><img alt="Codecov" src="https://codecov.io/gh/jacobwilliams/json-fortran/branch/master/graph/badge.svg"></a></p>
 <p><a href="https://github.com/jacobwilliams/json-fortran/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/jacobwilliams/json-fortran.png?style=plastic"></a>
 <a href="https://waffle.io/jacobwilliams/json-fortran"><img alt="Blocked by Vendor Bug" src="https://badge.waffle.io/jacobwilliams/json-fortran.png?label=vendor%20bug&amp;title=Blocked%20by%20Vendor%20Bug"></a>
 <a href="https://github.com/jacobwilliams/json-fortran/#contributing"><img alt="Ready in backlog" src="https://badge.waffle.io/jacobwilliams/json-fortran.png?label=Ready&amp;title=Ready"></a>
@@ -219,12 +222,12 @@ A Fortran 2008 <abbr title="JavaScript Object Notation: A human friendly syntax 
 <a href="https://github.com/jacobwilliams/json-fortran/blob/master/CHANGELOG.md#unreleased">CHANGELOG</a>
 for a list of changes since the latest release.</p>
 <p><a href="#json-fortran">top</a></p>
-<h2 id="brief-description"><a class="toclink" href="#brief-description">Brief description</a></h2>
-<p>A user-friendly and object-oriented <abbr title="Application Programming Interface: a set of routines, protocols, and tools for building software applications">API</abbr> for reading and writing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> files, written in
-modern Fortran.  The source code is a single Fortran module file (<a href="https://github.com/jacobwilliams/json-fortran/blob/master/src/json_module.F90">json_module.F90</a>).</p>
+<h2 id="brief-description">Brief description</h2>
+<p>A user-friendly, thread-safe, and object-oriented <abbr title="Application Programming Interface: a set of routines, protocols, and tools for building software applications">API</abbr> for reading and writing <a href="http://json.org"><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr></a> files, written in modern Fortran.</p>
 <p><a href="#json-fortran">top</a></p>
-<h2 id="download"><a class="toclink" href="#download">Download</a></h2>
-<p><a href="https://github.com/jacobwilliams/json-fortran/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/jacobwilliams/json-fortran.svg?style=plastic"></a></p>
+<h2 id="download">Download</h2>
+<p><a href="https://github.com/jacobwilliams/json-fortran/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/jacobwilliams/json-fortran.svg?style=plastic"></a>
+<a href="http://braumeister.org/formula/json-fortran"><img alt="homebrew version" src="https://img.shields.io/homebrew/v/json-fortran.svg?maxAge=2592000"></a></p>
 <p>Download the official versioned releases
 <a href="https://github.com/jacobwilliams/json-fortran/releases/latest">here</a>.
 Or, get the latest development code from the master branch
@@ -242,25 +245,25 @@ brew install --with-unicode-support json-fortran
 </pre></div>
 
 
-<p><em>Please note</em>, if you wish to support usage of json-fortran with
+<p><em>Please note</em>, if you wish to support usage of <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran with
 multiple Fortran compilers, please follow the CMake installation
 instructions below, as the homebrew installation is only intended to
 support a single Fortran compiler. Cheers!</p>
 <p><a href="#json-fortran">top</a></p>
-<h2 id="building-the-library"><a class="toclink" href="#building-the-library">Building the library</a></h2>
+<h2 id="building-the-library">Building the library</h2>
 <p>The code requires a Fortran compiler that supports
 various Fortran 2003 and Fortran 2008 features such as: allocatable
 strings, <code>newunit</code>, <code>generic</code>, <code>class</code>, and <code>abstract interface</code>.
 It has been successfully compiled with the <a href="https://software.intel.com/en-us/articles/non-commercial-software-development">Intel Fortran compiler
-13.1.0</a> (and greater) and the recent <a href="http://gcc.gnu.org/wiki/GFortran/News#GCC4.9">4.9 release of the GNU gfortran
-compiler</a>. It has also
+13.1.0</a> (and greater) and the <a href="http://gcc.gnu.org/wiki/GFortran">GNU gfortran
+compiler</a> [4.9 and greater]. It has also
 been reported that the library can be built (using the CMake build
 script) with the <a href="http://www.nag.com/nagware/NP/NP_desc.asp">NAG Fortran compiler 6.0</a></p>
-<p>Currently, several ways are provided to build the jsonfortran library
+<p>Currently, several ways are provided to build the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-fortran library
 (libjsonfortran).</p>
 <ul>
 <li>
-<p>A build script, <code>build.sh</code> is provided in the project root directory. This script uses <a href="https://github.com/szaghi/FoBiS">FoBiS</a> to build the json-fortran library and the unit tests.  Edit the script to use either the <a href="https://software.intel.com/en-us/fortran-compilers">Intel Fortran Compiler</a> or <a href="https://gcc.gnu.org/wiki/GFortran">Gfortran</a>.  Note that version 1.2.5 of FoBiS (or later) is required.</p>
+<p>A build script, <code>build.sh</code> is provided in the project root directory. This script uses <a href="https://github.com/szaghi/FoBiS">FoBiS</a> to build the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran library and the unit tests.  Edit the script to use either the <a href="https://software.intel.com/en-us/fortran-compilers">Intel Fortran Compiler</a> or <a href="https://gcc.gnu.org/wiki/GFortran">Gfortran</a>.  Note that version 1.2.5 of FoBiS (or later) is required.</p>
 </li>
 <li>
 <p>A <a href="https://www.visualstudio.com">Visual Studio</a> project is included for building the library (and unit tests) on Windows with the Intel Fortran Compiler.  The project has been tested with Visual Studio 2010 and 2013.</p>
@@ -271,14 +274,14 @@ system is provided. This build system has been tested on Mac and Linux
 using the Intel Fortran Compiler, gfortran 4.9, and NAG Fortran 6.0. It has not been
 tested on Windows. This CMake based build provides an install target,
 and exports from both the install location and the build location so
-that building and using json-fortran in another CMake based project is
+that building and using <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran in another CMake based project is
 trivial. To get started with the CMake based build, set the
 environment variable <code>FC</code> to point to your Fortran compiler, and
 create a build directory. Then <code>(cmake-gui|ccmake|cmake)
 /path/to/json-fortran-root</code> to configure, <code>make</code> to build and <code>make
 install</code> to optionally install. As long as the project is built with
 CMake, other CMake projects can find it and link against it. For example,
-if you have a second copy of the json-fortran project tree, and want to build the unit tests
+if you have a second copy of the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran project tree, and want to build the unit tests
 linking against those compiled/installed by the first copy:</p>
 </li>
 </ul>
@@ -286,7 +289,7 @@ linking against those compiled/installed by the first copy:</p>
 <span class="nb">enable_language</span> <span class="p">(</span> <span class="s">Fortran</span> <span class="p">)</span>
 <span class="nb">project</span> <span class="p">(</span> <span class="s">jf_test</span> <span class="s">NONE</span> <span class="p">)</span>
 
-<span class="nb">find_package</span> <span class="p">(</span> <span class="s">jsonfortran-</span><span class="o">${</span><span class="nv">CMAKE_Fortran_COMPILER_ID</span><span class="o">}</span> <span class="s">4.3.0</span> <span class="s">REQUIRED</span> <span class="p">)</span>
+<span class="nb">find_package</span> <span class="p">(</span> <span class="s">jsonfortran-</span><span class="o">${</span><span class="nv">CMAKE_Fortran_COMPILER_ID</span><span class="o">}</span> <span class="s">5.0.0</span> <span class="s">REQUIRED</span> <span class="p">)</span>
 <span class="nb">include_directories</span> <span class="p">(</span> <span class="s2">&quot;${jsonfortran_INCLUDE_DIRS}&quot;</span> <span class="p">)</span>
 
 <span class="nb">file</span> <span class="p">(</span> <span class="s">GLOB</span> <span class="s">JF_TEST_SRCS</span> <span class="s2">&quot;src/tests/jf_test_*.f90&quot;</span> <span class="p">)</span>
@@ -301,7 +304,7 @@ linking against those compiled/installed by the first copy:</p>
 
 
 <p><a href="#json-fortran">top</a></p>
-<h2 id="documentation"><a class="toclink" href="#documentation">Documentation</a></h2>
+<h2 id="documentation">Documentation</h2>
 <p>The <abbr title="Application Programming Interface: a set of routines, protocols, and tools for building software applications">API</abbr> documentation for the latest release version can be found
 <a href="http://jacobwilliams.github.io/json-fortran/">here</a>.  The
 documentation can also be generated by processing the source files
@@ -309,16 +312,16 @@ with <a href="https://github.com/cmacmackin/ford">FORD</a>.  Note that both the
 shell script and CMake will also generate these files automatically in the documentation folder, assuming you have FORD installed.</p>
 <p>Some examples can also be found on the <a href="https://github.com/jacobwilliams/json-fortran/wiki/Example-Usage">wiki</a>.</p>
 <p><a href="#json-fortran">top</a></p>
-<h2 id="contributing"><a class="toclink" href="#contributing">Contributing</a></h2>
+<h2 id="contributing">Contributing</h2>
 <p><a href="https://github.com/jacobwilliams/json-fortran/blob/master/CONTRIBUTING.md"><img alt="Ready in backlog" src="https://badge.waffle.io/jacobwilliams/json-fortran.png?label=Ready&amp;title=Ready"></a></p>
 <p>Want to help?  Take a quick look at our <a href="https://github.com/jacobwilliams/json-fortran/blob/master/CONTRIBUTING.md">contributing guidelines</a> then claim something in <a href="https://waffle.io/jacobwilliams/json-fortran">the "ready" column on our Waffle.io</a> and <a href="https://help.github.com/articles/fork-a-repo/">Fork. Commit. Pull request.</a></p>
 <p><a href="#json-fortran">top</a></p>
-<h2 id="license"><a class="toclink" href="#license">License</a></h2>
-<p>The json-fortran source code and related files and documentation are distributed under a permissive free software license (BSD-style).  See the <a href="https://raw.githubusercontent.com/jacobwilliams/json-fortran/master/LICENSE">LICENSE</a> file for more details.</p>
+<h2 id="license">License</h2>
+<p>The <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran source code and related files and documentation are distributed under a permissive free software license (BSD-style).  See the <a href="https://raw.githubusercontent.com/jacobwilliams/json-fortran/master/LICENSE">LICENSE</a> file for more details.</p>
 <p><a href="#json-fortran">top</a></p>
-<h2 id="miscellaneous"><a class="toclink" href="#miscellaneous">Miscellaneous</a></h2>
+<h2 id="miscellaneous">Miscellaneous</h2>
 <ul>
-<li>This code is a fork and extensive upgrade of the Fortran 95 <a href="https://github.com/josephalevin/fson">FSON</a> code. The reason for the split was to be able to incorporate object-oriented and other nice features of the Fortran 2003 and 2008 standards.  Many thanks to the original authors of FSON.</li>
+<li><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran is a fork and extensive upgrade of the Fortran 95 <a href="https://github.com/josephalevin/fson">FSON</a> code. The reason for the split was to be able to incorporate object-oriented and other nice features of the Fortran 2003 and 2008 standards.  Many thanks to the original authors of FSON.</li>
 <li>For more information about <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>, see: <a href="http://www.json.org/">http://www.json.org/</a></li>
 <li><a href="https://travis-ci.org/jacobwilliams/json-fortran">json-fortran on Travis CI</a></li>
 <li><a href="https://waffle.io/jacobwilliams/json-fortran">json-fortran on Waffle.IO</a></li>
@@ -341,12 +344,18 @@ browser's back button to navigate back to
 
     <hr>
     <footer>
-        <div class="row">
+      <div class="row">
         <div class="col-md-4">&copy; 2016 </div>
-	<div class="col-md-4"><span class="text-center"> JSON-Fortran was developed by Jacob Williams</span></div>
-        <div class="col-md-4"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a></span></div>
+        <div class="col-md-4"><span class="text-center"> JSON-Fortran was developed by Jacob Williams</span></div>
+        <div class="col-md-4">
+          <span class="pull-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </span>
         </div>
-        <br>
+      </div>
+      <br>
     </footer>
     </div> <!-- /container -->
 
@@ -374,6 +383,6 @@ browser's back button to navigate back to
         }
       });
     </script>
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </body>
 </html>

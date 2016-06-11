@@ -70,8 +70,6 @@
             <li><a href="../lists/types.html">Derived Types</a></li>
 				
 				
-            <li><a href="../lists/programs.html">Programs</a></li>
-				
           </ul>
         
         <form action="../search.html" class="navbar-form navbar-right" role="search">
@@ -110,14 +108,14 @@
      
     
     
-    <li><i class="fa fa-code"></i><a href="../src/json_module.F90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/json_file_module.F90"> Source File</a></li>
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
-     <li><a href='../sourcefile/json_module.f90.html'>json_module.F90</a></li>
+     <li><a href='../sourcefile/json_file_module.f90.html'>json_file_module.F90</a></li>
   
-     <li><a href='../module/json_module.html'>json_module</a></li>
+     <li><a href='../module/json_file_module.html'>json_file_module</a></li>
   
      <li class="active">json_file</li>
   </ol>
@@ -157,6 +155,8 @@
           
           <a class="list-group-item" href="../interface/json_file.html#moduleprocedure-initialize_json_file">initialize_json_file</a>
           
+          <a class="list-group-item" href="../interface/json_file.html#moduleprocedure-initialize_json_file_v2">initialize_json_file_v2</a>
+          
         </div>
     </div>
   </div>
@@ -169,8 +169,6 @@
     <div id="allprocs" class="panel-collapse collapse">
         <div class="list-group">
           
-          <a class="list-group-item" href="../proc/add_variables_to_input.html">add_variables_to_input</a>
-          
           <a class="list-group-item" href="../proc/annotate_invalid_json.html">annotate_invalid_json</a>
           
           <a class="list-group-item" href="../proc/compact_real_string.html">compact_real_string</a>
@@ -178,6 +176,10 @@
           <a class="list-group-item" href="../proc/default_comp_ucs4.html">default_comp_ucs4</a>
           
           <a class="list-group-item" href="../proc/default_join_ucs4.html">default_join_ucs4</a>
+          
+          <a class="list-group-item" href="../proc/default_neq_ucs4.html">default_neq_ucs4</a>
+          
+          <a class="list-group-item" href="../proc/destroy_json_core.html">destroy_json_core</a>
           
           <a class="list-group-item" href="../proc/destroy_json_data.html">destroy_json_data</a>
           
@@ -187,11 +189,15 @@
           
           <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html">get_current_line_from_file_stream</a>
           
+          <a class="list-group-item" href="../proc/initialize_json_core.html">initialize_json_core</a>
+          
+          <a class="list-group-item" href="../proc/initialize_json_core_in_file.html">initialize_json_core_in_file</a>
+          
           <a class="list-group-item" href="../proc/initialize_json_file.html">initialize_json_file</a>
           
-          <a class="list-group-item" href="../proc/integer_to_string.html">integer_to_string</a>
+          <a class="list-group-item" href="../proc/initialize_json_file_v2.html">initialize_json_file_v2</a>
           
-          <a class="list-group-item" href="../interface/json_add.html">json_add</a>
+          <a class="list-group-item" href="../proc/integer_to_string.html">integer_to_string</a>
           
           <a class="list-group-item" href="../proc/json_check_for_errors.html">json_check_for_errors</a>
           
@@ -199,29 +205,21 @@
           
           <a class="list-group-item" href="../proc/json_clone.html">json_clone</a>
           
+          <a class="list-group-item" href="../interface/json_core.html">json_core</a>
+          
           <a class="list-group-item" href="../proc/json_count.html">json_count</a>
-          
-          <a class="list-group-item" href="../interface/json_create_array.html">json_create_array</a>
-          
-          <a class="list-group-item" href="../interface/json_create_double.html">json_create_double</a>
-          
-          <a class="list-group-item" href="../interface/json_create_integer.html">json_create_integer</a>
-          
-          <a class="list-group-item" href="../interface/json_create_logical.html">json_create_logical</a>
-          
-          <a class="list-group-item" href="../interface/json_create_null.html">json_create_null</a>
-          
-          <a class="list-group-item" href="../interface/json_create_object.html">json_create_object</a>
-          
-          <a class="list-group-item" href="../interface/json_create_string.html">json_create_string</a>
-          
-          <a class="list-group-item" href="../interface/json_destroy.html">json_destroy</a>
           
           <a class="list-group-item" href="../proc/json_failed.html">json_failed</a>
           
           <a class="list-group-item" href="../interface/json_file.html">json_file</a>
           
+          <a class="list-group-item" href="../proc/json_file_check_for_errors.html">json_file_check_for_errors</a>
+          
+          <a class="list-group-item" href="../proc/json_file_clear_exceptions.html">json_file_clear_exceptions</a>
+          
           <a class="list-group-item" href="../proc/json_file_destroy.html">json_file_destroy</a>
+          
+          <a class="list-group-item" href="../proc/json_file_failed.html">json_file_failed</a>
           
           <a class="list-group-item" href="../proc/json_file_get_double.html">json_file_get_double</a>
           
@@ -253,6 +251,8 @@
           
           <a class="list-group-item" href="../proc/json_file_print_2.html">json_file_print_2</a>
           
+          <a class="list-group-item" href="../proc/json_file_print_error_message.html">json_file_print_error_message</a>
+          
           <a class="list-group-item" href="../proc/json_file_print_to_console.html">json_file_print_to_console</a>
           
           <a class="list-group-item" href="../proc/json_file_print_to_string.html">json_file_print_to_string</a>
@@ -271,15 +271,11 @@
           
           <a class="list-group-item" href="../proc/json_file_variable_info.html">json_file_variable_info</a>
           
-          <a class="list-group-item" href="../interface/json_get.html">json_get</a>
-          
           <a class="list-group-item" href="../proc/json_get_array.html">json_get_array</a>
           
           <a class="list-group-item" href="../proc/json_get_array_with_path.html">json_get_array_with_path</a>
           
           <a class="list-group-item" href="../proc/json_get_by_path.html">json_get_by_path</a>
-          
-          <a class="list-group-item" href="../interface/json_get_child.html">json_get_child</a>
           
           <a class="list-group-item" href="../proc/json_get_double.html">json_get_double</a>
           
@@ -325,13 +321,9 @@
           
           <a class="list-group-item" href="../proc/json_initialize.html">json_initialize</a>
           
-          <a class="list-group-item" href="../interface/json_parse.html">json_parse</a>
-          
           <a class="list-group-item" href="../proc/json_parse_file.html">json_parse_file</a>
           
           <a class="list-group-item" href="../proc/json_parse_string.html">json_parse_string</a>
-          
-          <a class="list-group-item" href="../interface/json_print.html">json_print</a>
           
           <a class="list-group-item" href="../proc/json_print_1.html">json_print_1</a>
           
@@ -339,17 +331,9 @@
           
           <a class="list-group-item" href="../proc/json_print_error_message.html">json_print_error_message</a>
           
-          <a class="list-group-item" href="../interface/json_print_to_string.html">json_print_to_string</a>
-          
-          <a class="list-group-item" href="../interface/json_remove.html">json_remove</a>
-          
-          <a class="list-group-item" href="../interface/json_remove_if_present.html">json_remove_if_present</a>
-          
           <a class="list-group-item" href="../proc/json_throw_exception.html">json_throw_exception</a>
           
           <a class="list-group-item" href="../proc/json_traverse.html">json_traverse</a>
-          
-          <a class="list-group-item" href="../interface/json_update.html">json_update</a>
           
           <a class="list-group-item" href="../proc/json_update_double.html">json_update_double</a>
           
@@ -413,15 +397,33 @@
           
           <a class="list-group-item" href="../proc/json_value_get_by_name_chars.html">json_value_get_by_name_chars</a>
           
+          <a class="list-group-item" href="../proc/json_value_get_child.html">json_value_get_child</a>
+          
+          <a class="list-group-item" href="../proc/json_value_is_child_of.html">json_value_is_child_of</a>
+          
           <a class="list-group-item" href="../proc/json_value_print.html">json_value_print</a>
           
           <a class="list-group-item" href="../proc/json_value_remove.html">json_value_remove</a>
           
           <a class="list-group-item" href="../proc/json_value_remove_if_present.html">json_value_remove_if_present</a>
           
+          <a class="list-group-item" href="../proc/json_value_rename.html">json_value_rename</a>
+          
+          <a class="list-group-item" href="../proc/json_value_swap.html">json_value_swap</a>
+          
           <a class="list-group-item" href="../proc/json_value_to_string.html">json_value_to_string</a>
           
+          <a class="list-group-item" href="../proc/json_value_validate.html">json_value_validate</a>
+          
+          <a class="list-group-item" href="../proc/lowercase_character.html">lowercase_character</a>
+          
+          <a class="list-group-item" href="../proc/lowercase_string.html">lowercase_string</a>
+          
+          <a class="list-group-item" href="../proc/name_equal.html">name_equal</a>
+          
           <a class="list-group-item" href="../interface/operator%28SLASHSLASH%29.html">operator(//)</a>
+          
+          <a class="list-group-item" href="../interface/operator%28SLASH%3D%29.html">operator(/=)</a>
           
           <a class="list-group-item" href="../interface/operator%28%3D%3D%29.html">operator(==)</a>
           
@@ -441,45 +443,11 @@
           
           <a class="list-group-item" href="../proc/push_char.html">push_char</a>
           
-          <a class="list-group-item" href="../proc/read_file.html">read_file</a>
-          
           <a class="list-group-item" href="../proc/real_to_string.html">real_to_string</a>
-          
-          <a class="list-group-item" href="../proc/rename.html">rename</a>
           
           <a class="list-group-item" href="../proc/string_to_double.html">string_to_double</a>
           
           <a class="list-group-item" href="../proc/string_to_integer.html">string_to_integer</a>
-          
-          <a class="list-group-item" href="../proc/test_1.html">test_1</a>
-          
-          <a class="list-group-item" href="../proc/test_10.html">test_10</a>
-          
-          <a class="list-group-item" href="../proc/test_11.html">test_11</a>
-          
-          <a class="list-group-item" href="../proc/test_12.html">test_12</a>
-          
-          <a class="list-group-item" href="../proc/test_13.html">test_13</a>
-          
-          <a class="list-group-item" href="../proc/test_14.html">test_14</a>
-          
-          <a class="list-group-item" href="../proc/test_2.html">test_2</a>
-          
-          <a class="list-group-item" href="../proc/test_3.html">test_3</a>
-          
-          <a class="list-group-item" href="../proc/test_4.html">test_4</a>
-          
-          <a class="list-group-item" href="../proc/test_5.html">test_5</a>
-          
-          <a class="list-group-item" href="../proc/test_6.html">test_6</a>
-          
-          <a class="list-group-item" href="../proc/test_7.html">test_7</a>
-          
-          <a class="list-group-item" href="../proc/test_8.html">test_8</a>
-          
-          <a class="list-group-item" href="../proc/test_9.html">test_9</a>
-          
-          <a class="list-group-item" href="../interface/throw_exception.html">throw_exception</a>
           
           <a class="list-group-item" href="../proc/to_array.html">to_array</a>
           
@@ -504,6 +472,8 @@
           <a class="list-group-item" href="../proc/ucs4_comp_default.html">ucs4_comp_default</a>
           
           <a class="list-group-item" href="../proc/ucs4_join_default.html">ucs4_join_default</a>
+          
+          <a class="list-group-item" href="../proc/ucs4_neq_default.html">ucs4_neq_default</a>
           
           <a class="list-group-item" href="../proc/unescape_string.html">unescape_string</a>
           
@@ -605,6 +575,8 @@
           
           <a class="list-group-item" href="../proc/wrap_json_value_remove_if_present.html">wrap_json_value_remove_if_present</a>
           
+          <a class="list-group-item" href="../proc/wrap_json_value_rename.html">wrap_json_value_rename</a>
+          
         </div>
     </div>
   </div>
@@ -616,14 +588,21 @@
     <div class="col-lg-9" id='text'>
     <h2>public interface json_file</h2>
 	 <p>Structure constructor to initialize a <a href="../type/json_file.html">json_file</a> object
-  with an existing <a href="../type/json_value.html">json_value</a> object</p>
-<h1 id="example"><a class="toclink" href="#example">Example</a></h1>
+  with an existing <a href="../type/json_value.html">json_value</a> object, and either the <a href="../interface/json_core.html">json_core</a>
+  settings or a <a href="../interface/json_core.html">json_core</a> instance.</p>
+<h1 id="example">Example</h1>
 <div class="codehilite"><pre><span></span> <span class="p">...</span>
  <span class="k">type</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">my_file</span>
- <span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">)</span> <span class="kd">::</span> <span class="n">json_object</span>
+ <span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span> <span class="kd">::</span> <span class="n">json_object</span>
+ <span class="k">type</span><span class="p">(</span><span class="n">json_core</span><span class="p">)</span> <span class="kd">::</span> <span class="n">json_core_object</span>
  <span class="p">...</span>
- <span class="c">! Construct a json_object</span>
- <span class="n">my_file</span> <span class="o">=</span> <span class="n">json_file</span><span class="p">(</span><span class="n">json_object</span><span class="p">)</span>
+ <span class="c">! Construct a json_object:</span>
+ <span class="c">!could do this:</span>
+   <span class="n">my_file</span> <span class="o">=</span> <span class="n">json_file</span><span class="p">(</span><span class="n">json_object</span><span class="p">)</span>
+ <span class="c">!or:</span>
+   <span class="n">my_file</span> <span class="o">=</span> <span class="n">json_file</span><span class="p">(</span><span class="n">json_object</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
+ <span class="c">!or:</span>
+   <span class="n">my_file</span> <span class="o">=</span> <span class="n">json_file</span><span class="p">(</span><span class="n">json_object</span><span class="p">,</span><span class="n">json_core_object</span><span class="p">)</span>
 </pre></div>
      
      <h3>Calls</h3>
@@ -634,27 +613,39 @@
 <!-- Generated by graphviz version 2.26.3 (20100126.1600)
  -->
 <!-- Title: interface~~json_file~~CallsGraph Pages: 1 -->
-<svg id="interfacejson_fileCallsGraph" width="194pt" height="34pt"
- viewBox="0.00 0.00 194.00 34.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="interface~~json_file~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 30)">
+<svg id="interfacejson_fileCallsGraph" width="210pt" height="78pt"
+ viewBox="0.00 0.00 210.00 78.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="interface~~json_file~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 74)">
 <title>interface~~json_file~~CallsGraph</title>
-<polygon fill="white" stroke="white" points="-4,5 -4,-30 191,-30 191,5 -4,5"/>
+<polygon fill="white" stroke="white" points="-4,5 -4,-74 207,-74 207,5 -4,5"/>
 <!-- interface~json_file -->
 <g id="node1" class="node"><title>interface~json_file</title>
-<polygon fill="none" stroke="black" points="54,-26 2.13163e-14,-26 0,-1.24345e-14 54,-3.55271e-15 54,-26"/>
-<text text-anchor="middle" x="27" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50">json_file</text>
+<polygon fill="none" stroke="black" points="54,-48 2.13163e-14,-48 0,-22 54,-22 54,-48"/>
+<text text-anchor="middle" x="27" y="-32.55" font-family="Helvetica,sans-Serif" font-size="10.50">json_file</text>
+</g>
+<!-- proc~initialize_json_file_v2 -->
+<g id="node2" class="node"><title>proc~initialize_json_file_v2</title>
+<a xlink:href="../proc/initialize_json_file_v2.html" xlink:title="initialize_json_file_v2">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="202,-70 90,-70 90,-44 202,-44 202,-70"/>
+<text text-anchor="middle" x="146" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">initialize_json_file_v2</text>
+</a>
+</g>
+<!-- interface~json_file&#45;&gt;proc~initialize_json_file_v2 -->
+<g id="edge2" class="edge"><title>interface~json_file&#45;&gt;proc~initialize_json_file_v2</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M54.0029,-39.9921C61.859,-41.4445 70.8053,-43.0985 79.9607,-44.7911"/>
+<polygon fill="#000000" stroke="#000000" points="79.4659,-48.2588 89.9356,-46.6352 80.7385,-41.3755 79.4659,-48.2588"/>
 </g>
 <!-- proc~initialize_json_file -->
-<g id="node2" class="node"><title>proc~initialize_json_file</title>
+<g id="node3" class="node"><title>proc~initialize_json_file</title>
 <a xlink:href="../proc/initialize_json_file.html" xlink:title="initialize_json_file">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="185,-26 91,-26 91,-1.24345e-14 185,-3.55271e-15 185,-26"/>
-<text text-anchor="middle" x="138" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">initialize_json_file</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="193,-26 99,-26 99,-1.24345e-14 193,-3.55271e-15 193,-26"/>
+<text text-anchor="middle" x="146" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">initialize_json_file</text>
 </a>
 </g>
 <!-- interface~json_file&#45;&gt;proc~initialize_json_file -->
-<g id="edge2" class="edge"><title>interface~json_file&#45;&gt;proc~initialize_json_file</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M54.1537,-13C62.0812,-13 71.0635,-13 80.1302,-13"/>
-<polygon fill="black" stroke="black" points="80.3511,-16.5001 90.3511,-13 80.351,-9.5001 80.3511,-16.5001"/>
+<g id="edge4" class="edge"><title>interface~json_file&#45;&gt;proc~initialize_json_file</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M54.0029,-30.0079C64.1819,-28.126 76.1913,-25.9058 88.1142,-23.7016"/>
+<polygon fill="#000000" stroke="#000000" points="88.87,-27.1213 98.067,-21.8616 87.5973,-20.2379 88.87,-27.1213"/>
 </g>
 </g>
 </svg>
@@ -729,6 +720,8 @@ Nodes of different colours represent the following:
 </g>
 </svg>
 
+Where possible, edges connecting nodes are given different colours to make them
+easier to distinguish in large graphs.
 <h5>Module Graph</h5>
 <p>Solid arrows point from a parent (sub)module to the submodule which is
 descended from it. Dashed arrows point from a module being used to the
@@ -763,7 +756,7 @@ implementation in a submodule of an interface in a parent module.</p>
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-initialize_json_file"></span><h3>
-private function <a href='../proc/initialize_json_file.html'>initialize_json_file</a>(p) result(file_object)
+private function <a href='../proc/initialize_json_file.html'>initialize_json_file</a>(p, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys) result(file_object)
     
     
     
@@ -797,6 +790,130 @@ private function <a href='../proc/initialize_json_file.html'>initialize_json_fil
   <td>pointer</td><td>::</td>
   <td><strong>p</strong></td><td><p><code>json_value</code> object to cast
  as a <code>json_file</code> object</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>verbose</strong></td><td><p>mainly useful for debugging (default is false)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>compact_reals</strong></td><td><p>to compact the real number strings for output (default is true)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>print_signs</strong></td><td><p>always print numeric sign (default is false)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CDK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>real_format</strong></td><td><p>Real number format: 'E' [default], '*', 'G', 'EN', or 'ES'</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>spaces_per_tab</strong></td><td><p>number of spaces per tab for indenting (default is 2)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>strict_type_checking</strong></td><td><p>if true, no integer, double, or logical type
+ conversions are done for the <code>get</code> routines
+ (default is false)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>trailing_spaces_significant</strong></td><td><p>for name and path comparisons, is trailing
+ space to be considered significant.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>case_sensitive_keys</strong></td><td><p>for name and path comparisons, are they
+ case sensitive.</p></td>
   
 </tr>
 
@@ -834,7 +951,104 @@ private function <a href='../proc/initialize_json_file.html'>initialize_json_fil
 
 
        
-       <p>Cast a <a href="../type/json_value.html">json_value</a> object as a <a href="../type/json_file.html">json_file</a> object</p>
+       <p>Cast a <a href="../type/json_value.html">json_value</a> object as a <a href="../type/json_file.html">json_file</a> object.
+  It also calls the <code>initialize()</code> method.</p>
+        
+
+  </div>
+  </div>
+
+ 	 
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialize_json_file_v2"></span><h3>
+private function <a href='../proc/initialize_json_file_v2.html'>initialize_json_file_v2</a>(json_value_object, json_core_object) result(file_object)
+    
+    
+    
+</h3></div>
+  <div class="panel-body">
+       
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>pointer</td><td>::</td>
+  <td><strong>json_value_object</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/json_core.html'>json_core</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>json_core_object</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/json_file.html'>json_file</a>)
+  </small></h4>
+  
+    
+    
+    <h4>Description</h4>
+       
+       
+
+<dl class="dl-horizontal">
+    
+    <dt>Author</dt><dd>Jacob Williams</dd>
+    
+    
+    <dt>Date</dt><dd>4/26/2016</dd>
+    
+    
+    
+    
+  </dl>
+
+
+       
+       <p>Cast a <a href="../type/json_value.html">json_value</a> pointer and a <a href="../interface/json_core.html">json_core</a> object
+  as a <a href="../type/json_file.html">json_file</a> object.</p>
         
 
   </div>
@@ -848,12 +1062,18 @@ private function <a href='../proc/initialize_json_file.html'>initialize_json_fil
 
     <hr>
     <footer>
-        <div class="row">
+      <div class="row">
         <div class="col-md-4">&copy; 2016 </div>
-	<div class="col-md-4"><span class="text-center"> JSON-Fortran was developed by Jacob Williams</span></div>
-        <div class="col-md-4"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a></span></div>
+        <div class="col-md-4"><span class="text-center"> JSON-Fortran was developed by Jacob Williams</span></div>
+        <div class="col-md-4">
+          <span class="pull-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </span>
         </div>
-        <br>
+      </div>
+      <br>
     </footer>
     </div> <!-- /container -->
 
@@ -881,6 +1101,6 @@ private function <a href='../proc/initialize_json_file.html'>initialize_json_fil
         }
       });
     </script>
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </body>
 </html>
