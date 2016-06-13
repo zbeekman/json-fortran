@@ -10,7 +10,7 @@
     <meta name="author" content="Chris MacMackin" >
     <link rel="icon" href="../favicon.png">
 
-    <title>initialize_json_core &ndash; JSON-Fortran</title>
+    <title>set_json_core_in_file &ndash; JSON-Fortran</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -89,8 +89,8 @@
     
   
   <div class="row">
-    <h1>initialize_json_core
-    <small>Function</small>
+    <h1>set_json_core_in_file
+    <small>Subroutine</small>
     
     </h1>
 	 
@@ -99,25 +99,21 @@
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
      
-    <li><i class="fa fa-pencil"></i> Jacob Williams</li>
-     
-     
-    <li><i class="fa fa-calendar-o"></i> 4/26/2016</li>
      
      
      
     
     
-    <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/json_file_module.F90"> Source File</a></li>
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
-     <li><a href='../sourcefile/json_value_module.f90.html'>json_value_module.F90</a></li>
+     <li><a href='../sourcefile/json_file_module.f90.html'>json_file_module.F90</a></li>
   
-     <li><a href='../module/json_value_module.html'>json_value_module</a></li>
+     <li><a href='../module/json_file_module.html'>json_file_module</a></li>
   
-     <li class="active">initialize_json_core</li>
+     <li class="active">set_json_core_in_file</li>
   </ol>
 </div>
 </div>
@@ -152,7 +148,7 @@
   <div class="panel panel-primary">
     <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
     <div class="list-group">
-      <a class="list-group-item" href="../proc/initialize_json_core.html#src">initialize_json_core</a>
+      <a class="list-group-item" href="../proc/set_json_core_in_file.html#src">set_json_core_in_file</a>
     </div>
   </div>
   
@@ -587,7 +583,7 @@
     
     <div class="col-lg-9" id='text'>
     <h2>
-private function initialize_json_core(verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys) result(json_core_object)
+private subroutine set_json_core_in_file(me, core)
     
     
     
@@ -615,12 +611,12 @@ private function initialize_json_core(verbose, compact_reals, print_signs, real_
   
 <tr>
   
-  <td><span class="anchor" id="variable-verbose%7E3"></span>logical(kind=LK),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
+  <td><span class="anchor" id="variable-me%7E6"></span>class(<a href='../type/json_file.html'>json_file</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
   
   <td></td><td>::</td>
-  <td><strong>verbose</strong></td><td><p>mainly useful for debugging (default is false)</p></td>
+  <td><strong>me</strong></td><td></td>
   
 </tr>
 
@@ -630,106 +626,12 @@ private function initialize_json_core(verbose, compact_reals, print_signs, real_
   
 <tr>
   
-  <td><span class="anchor" id="variable-compact_reals%7E3"></span>logical(kind=LK),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
+  <td><span class="anchor" id="variable-core%7E2"></span>type(<a href='../type/json_core.html'>json_core</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
   
   <td></td><td>::</td>
-  <td><strong>compact_reals</strong></td><td><p>to compact the real number strings for output (default is true)</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-print_signs%7E3"></span>logical(kind=LK),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>print_signs</strong></td><td><p>always print numeric sign (default is false)</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-real_format%7E3"></span>character(kind=CDK,len=*),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>real_format</strong></td><td><p>Real number format: 'E' [default], '*', 'G', 'EN', or 'ES'</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-spaces_per_tab%7E4"></span>integer(kind=IK),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>spaces_per_tab</strong></td><td><p>number of spaces per tab for indenting (default is 2)</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-strict_type_checking%7E4"></span>logical(kind=LK),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>strict_type_checking</strong></td><td><p>if true, no integer, double, or logical type
- conversions are done for the <code>get</code> routines
- (default is false)</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-trailing_spaces_significant%7E4"></span>logical(kind=LK),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>trailing_spaces_significant</strong></td><td><p>for name and path comparisons, is trailing
- space to be considered significant.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-case_sensitive_keys%7E4"></span>logical(kind=LK),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>case_sensitive_keys</strong></td><td><p>for name and path comparisons, are they
- case sensitive.</p></td>
+  <td><strong>core</strong></td><td></td>
   
 </tr>
 
@@ -739,149 +641,14 @@ private function initialize_json_core(verbose, compact_reals, print_signs, real_
     
     
     
-    
-    
-    
-    
-	 <h3>Return Value <small><span class="anchor" id="variable-json_core_object%7E2"></span>type(<a href='../type/json_core.html'>json_core</a>)
-  </small></h3>
-    
-    
-    
     <h3>Description</h3>
-    <p>Function constructor for a <a href="../interface/json_core.html">json_core</a>.
-  This is just a wrapper for <a href="../proc/json_initialize.html">json_initialize</a>.</p>
-<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><a href="../proc/initialize_json_core.html">initialize_json_core</a>, <a href="../proc/json_initialize.html">json_initialize</a>,
-      <a href="../proc/initialize_json_core_in_file.html">initialize_json_core_in_file</a>, and <a href="../proc/initialize_json_file.html">initialize_json_file</a>
-      all have a similar interface.</div>
+    <p>Set the <a href="../interface/json_core.html">json_core</a> for this <a href="../interface/json_file.html">json_file</a>.</p>
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4>: This does not destroy the data in the file.</div>
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4>: This one is used if you want to initialize the file with
+       an already-existing <a href="../interface/json_core.html">json_core</a> (presumably, this was already
+       initialized by a call to <a href="../proc/initialize_json_core.html">initialize_json_core</a> or similar).</div>
     
     
-     
-     <h3>Called By</h3>
-     
-                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.26.3 (20100126.1600)
- -->
-<!-- Title: proc~~initialize_json_core~~CalledByGraph Pages: 1 -->
-<svg id="procinitialize_json_coreCalledByGraph" width="208pt" height="34pt"
- viewBox="0.00 0.00 208.00 34.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~initialize_json_core~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 30)">
-<title>proc~~initialize_json_core~~CalledByGraph</title>
-<polygon fill="white" stroke="white" points="-4,5 -4,-30 205,-30 205,5 -4,5"/>
-<!-- proc~initialize_json_core -->
-<g id="node1" class="node"><title>proc~initialize_json_core</title>
-<polygon fill="none" stroke="black" points="199,-26 97,-26 97,-1.24345e-14 199,-3.55271e-15 199,-26"/>
-<text text-anchor="middle" x="148" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50">initialize_json_core</text>
-</g>
-<!-- interface~json_core -->
-<g id="node2" class="node"><title>interface~json_core</title>
-<a xlink:href="../interface/json_core.html" xlink:title="json_core">
-<polygon fill="#a7506f" stroke="#a7506f" points="59,-26 1,-26 1,-1.24345e-14 59,-3.55271e-15 59,-26"/>
-<text text-anchor="middle" x="30" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_core</text>
-</a>
-</g>
-<!-- interface~json_core&#45;&gt;proc~initialize_json_core -->
-<g id="edge2" class="edge"><title>interface~json_core&#45;&gt;proc~initialize_json_core</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M59.7764,-13C67.8125,-13 76.8163,-13 85.9182,-13"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="86.1899,-16.5001 96.1898,-13 86.1898,-9.5001 86.1899,-16.5001"/>
-</g>
-</g>
-</svg>
-</div>
-                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
-                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
-                      </div>
-                      <div class="modal-body">
-                        
-Nodes of different colours represent the following:
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.26.3 (20100126.1600)
- -->
-<!-- Title: Graph Key Pages: 1 -->
-<svg width="641pt" height="28pt"
- viewBox="0.00 0.00 641.00 27.80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph1" class="graph" transform="scale(0.817602 0.817602) rotate(0) translate(4 30)">
-<title>Graph Key</title>
-<polygon fill="white" stroke="white" points="-4,5 -4,-30 781,-30 781,5 -4,5"/>
-<!-- Module -->
-<g id="node1" class="node"><title>Module</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-26 2.13163e-14,-26 0,-1.24345e-14 54,-3.55271e-15 54,-26"/>
-<text text-anchor="middle" x="27" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
-</g>
-<!-- Submodule -->
-<g id="node2" class="node"><title>Submodule</title>
-<polygon fill="#5bc0de" stroke="#5bc0de" points="138,-26 72,-26 72,-1.24345e-14 138,-3.55271e-15 138,-26"/>
-<text text-anchor="middle" x="105" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
-</g>
-<!-- Type -->
-<g id="node3" class="node"><title>Type</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="210,-26 156,-26 156,-1.24345e-14 210,-3.55271e-15 210,-26"/>
-<text text-anchor="middle" x="183" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
-</g>
-<!-- Subroutine -->
-<g id="node4" class="node"><title>Subroutine</title>
-<polygon fill="#d9534f" stroke="#d9534f" points="292,-26 228,-26 228,-1.24345e-14 292,-3.55271e-15 292,-26"/>
-<text text-anchor="middle" x="260" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
-</g>
-<!-- Function -->
-<g id="node5" class="node"><title>Function</title>
-<polygon fill="#d94e8f" stroke="#d94e8f" points="364,-26 310,-26 310,-1.24345e-14 364,-3.55271e-15 364,-26"/>
-<text text-anchor="middle" x="337" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
-</g>
-<!-- Interface -->
-<g id="node6" class="node"><title>Interface</title>
-<polygon fill="#a7506f" stroke="#a7506f" points="436,-26 382,-26 382,-1.24345e-14 436,-3.55271e-15 436,-26"/>
-<text text-anchor="middle" x="409" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
-</g>
-<!-- Unknown Procedure Type -->
-<g id="node7" class="node"><title>Unknown Procedure Type</title>
-<polygon fill="#777777" stroke="#777777" points="590,-26 454,-26 454,-1.24345e-14 590,-3.55271e-15 590,-26"/>
-<text text-anchor="middle" x="522" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
-</g>
-<!-- Program -->
-<g id="node8" class="node"><title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="662,-26 608,-26 608,-1.24345e-14 662,-3.55271e-15 662,-26"/>
-<text text-anchor="middle" x="635" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
-</g>
-<!-- This Page&#39;s Entity -->
-<g id="node9" class="node"><title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="black" points="776,-26 680,-26 680,-1.24345e-14 776,-3.55271e-15 776,-26"/>
-<text text-anchor="middle" x="728" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
-</g>
-</g>
-</svg>
-
-Where possible, edges connecting nodes are given different colours to make them
-easier to distinguish in large graphs.
-<h5>Module Graph</h5>
-<p>Solid arrows point from a parent (sub)module to the submodule which is
-descended from it. Dashed arrows point from a module being used to the
-module using it.</p>
-<h5>Type Graph</h5>
-<p>Solid arrows point from one derived type to another which extends
-(inherits from) it. Dashed arrows point from a derived type to another
-type containing it as a components, with a label listing the name(s) of
-said component(s).</p>
-<h5>Call Graph</h5>
-<p>Solid arrows point from a procedure to one which it calls. Dashed 
-arrows point from an interface to procedures which implement that interface.
-This could include the module procedures in a generic interface or the
-implementation in a submodule of an interface in a parent module.</p>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
      
     <br>
     
@@ -902,35 +669,16 @@ implementation in a submodule of an interface in a parent module.</p>
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">function </span><span class="n">initialize_json_core</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span><span class="n">compact_reals</span><span class="p">,&amp;</span>
-                                  <span class="n">print_signs</span><span class="p">,</span><span class="n">real_format</span><span class="p">,</span><span class="n">spaces_per_tab</span><span class="p">,&amp;</span>
-                                  <span class="n">strict_type_checking</span><span class="p">,&amp;</span>
-                                  <span class="n">trailing_spaces_significant</span><span class="p">,&amp;</span>
-                                  <span class="n">case_sensitive_keys</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">json_core_object</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">set_json_core_in_file</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">core</span><span class="p">)</span>
 
     <span class="k">implicit none</span>
 
-<span class="k">    type</span><span class="p">(</span><span class="n">json_core</span><span class="p">)</span> <span class="kd">::</span> <span class="n">json_core_object</span>
-    <span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">verbose</span>       <span class="c">!! mainly useful for debugging (default is false)</span>
-    <span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">compact_reals</span> <span class="c">!! to compact the real number strings for output (default is true)</span>
-    <span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">print_signs</span>   <span class="c">!! always print numeric sign (default is false)</span>
-    <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CDK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">real_format</span> <span class="c">!! Real number format: &#39;E&#39; [default], &#39;*&#39;, &#39;G&#39;, &#39;EN&#39;, or &#39;ES&#39;</span>
-    <span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">spaces_per_tab</span> <span class="c">!! number of spaces per tab for indenting (default is 2)</span>
-    <span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">strict_type_checking</span> <span class="c">!! if true, no integer, double, or logical type</span>
-                                                            <span class="c">!! conversions are done for the `get` routines</span>
-                                                            <span class="c">!! (default is false)</span>
-    <span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">trailing_spaces_significant</span>  <span class="c">!! for name and path comparisons, is trailing</span>
-                                                                    <span class="c">!! space to be considered significant.</span>
-    <span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">case_sensitive_keys</span>  <span class="c">!! for name and path comparisons, are they</span>
-                                                            <span class="c">!! case sensitive.</span>
+<span class="k">    class</span><span class="p">(</span><span class="n">json_file</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">me</span>
+    <span class="k">type</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>     <span class="kd">::</span> <span class="n">core</span>
 
-    <span class="k">call </span><span class="n">json_core_object</span><span class="p">%</span><span class="n">initialize</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span><span class="n">compact_reals</span><span class="p">,&amp;</span>
-                                <span class="n">print_signs</span><span class="p">,</span><span class="n">real_format</span><span class="p">,</span><span class="n">spaces_per_tab</span><span class="p">,&amp;</span>
-                                <span class="n">strict_type_checking</span><span class="p">,&amp;</span>
-                                <span class="n">trailing_spaces_significant</span><span class="p">,&amp;</span>
-                                <span class="n">case_sensitive_keys</span><span class="p">)</span>
+    <span class="n">me</span><span class="p">%</span><span class="n">core</span> <span class="o">=</span> <span class="n">core</span>
 
-    <span class="k">end function </span><span class="n">initialize_json_core</span>
+    <span class="k">end subroutine </span><span class="n">set_json_core_in_file</span>
 </pre></div>
 
     </section>

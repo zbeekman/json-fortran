@@ -207,26 +207,27 @@ currently reading.</p>
     <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$TRAVIS_BRANCH</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;master&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
            <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$TRAVIS_PULL_REQUEST</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;false&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
            <span class="o">[</span> <span class="s2">&quot;</span><span class="k">$(</span>ls -A <span class="s2">&quot;</span><span class="nv">$TRAVIS_BUILD_DIR</span><span class="s2">/doc&quot;</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span> <span class="c1">#not empty</span>
-            git clone --branch<span class="o">=</span>gh-pages <span class="s2">&quot;https://</span><span class="si">${</span><span class="nv">GH_TOKEN</span><span class="si">}</span><span class="s2">@github.com/</span><span class="nv">$TRAVIS_REPO_SLUG</span><span class="s2">&quot;</span> gh-pages
+            git clone -q --branch<span class="o">=</span>gh-pages <span class="s2">&quot;https://</span><span class="si">${</span><span class="nv">GH_TOKEN</span><span class="si">}</span><span class="s2">@github.com/</span><span class="nv">$TRAVIS_REPO_SLUG</span><span class="s2">&quot;</span> gh-pages &gt;/dev/null 2&gt;<span class="p">&amp;</span>1
             <span class="nb">cd</span> gh-pages <span class="o">||</span> <span class="nb">exit</span> 1
-        rm -r css favicon.png fonts index.html interface js lists media module page proc <span class="se">\</span>
-           program search.html sourcefile src tipuesearch <span class="nb">type</span>
+        rm -rf -- css fonts interface lists module proc search.html src <span class="nb">type</span> favicon.png index.html <span class="se">\</span>
+           js media page program sourcefile tipuesearch <span class="o">||</span> <span class="nb">true</span>
         cp -r <span class="s2">&quot;</span><span class="nv">$TRAVIS_BUILD_DIR</span><span class="s2">&quot;</span>/doc/* .
-            git add -A <span class="c1"># Add all the new files</span>
-            git commit -m <span class="s2">&quot;Development documentation updated by travis job </span><span class="nv">$TRAVIS_JOB_NUMBER</span><span class="s2"> for commits </span><span class="nv">$TRAVIS_COMMIT_RANGE</span><span class="s2">&quot;</span>
-            git push origin gh-pages
+            git add -A <span class="o">||</span> <span class="nb">true</span> <span class="c1"># Add all the new files</span>
+            git commit -m <span class="s2">&quot;Development documentation updated by travis job </span><span class="nv">$TRAVIS_JOB_NUMBER</span><span class="s2"> for commits </span><span class="nv">$TRAVIS_COMMIT_RANGE</span><span class="s2">&quot;</span> <span class="o">||</span> <span class="nb">true</span>
+            git push -fq origin gh-pages &gt; /dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="nb">true</span>
     <span class="k">fi</span>
     <span class="c1"># If publishing a new/updated tag, deploy it&#39;s documentation</span>
     <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$TRAVIS_TAG</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="k">$(</span>ls -A <span class="s2">&quot;</span><span class="nv">$TRAVIS_BUILD_DIR</span><span class="s2">/doc&quot;</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span> <span class="c1">#not empty</span>
         <span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$TRAVIS_BUILD_DIR</span><span class="s2">&quot;</span> <span class="o">||</span> <span class="nb">exit</span> 1
-        git clone --branch<span class="o">=</span>gh-pages <span class="s2">&quot;https://</span><span class="si">${</span><span class="nv">GH_TOKEN</span><span class="si">}</span><span class="s2">@github.com/</span><span class="nv">$TRAVIS_REPO_SLUG</span><span class="s2">&quot;</span> gh-pages
-        sed <span class="s2">&quot;1 s/^/version: </span><span class="si">${</span><span class="nv">TRAVIS_TAG</span><span class="si">}</span><span class="s2">\n/&quot;</span> json-fortran.md &gt; json-fortran.tagged.md
+        git clone -q --branch<span class="o">=</span>gh-pages <span class="s2">&quot;https://</span><span class="si">${</span><span class="nv">GH_TOKEN</span><span class="si">}</span><span class="s2">@github.com/</span><span class="nv">$TRAVIS_REPO_SLUG</span><span class="s2">&quot;</span> gh-pages &gt;/dev/null 2&gt;<span class="p">&amp;</span>1
+        sed <span class="s2">&quot;2 s/^/version: </span><span class="si">${</span><span class="nv">TRAVIS_TAG</span><span class="si">}</span><span class="s2">\n/&quot;</span> json-fortran.md &gt; json-fortran.tagged.md
+        head json-fortran.tagged.md <span class="c1"># Debug output</span>
         <span class="c1"># rebuild FORD documentation without pages, with version info, wiping out any existing tag folder</span>
-        ford -o <span class="s2">&quot;gh-pages/</span><span class="nv">$TRAVIS_TAG</span><span class="s2">&quot;</span> json-fortran.tagged.md
+        ford --debug -o <span class="s2">&quot;gh-pages/</span><span class="nv">$TRAVIS_TAG</span><span class="s2">&quot;</span> json-fortran.tagged.md
         <span class="nb">cd</span> gh-pages <span class="o">||</span> <span class="nb">exit</span> 1
         git add -A <span class="c1"># add all new files in $TRAVIS_TAG/</span>
         git commit -m <span class="s2">&quot;Tag/release documentation updated by travis job </span><span class="nv">$TRAVIS_JOB_NUMBER</span><span class="s2"> for tag </span><span class="nv">$TRAVIS_TAG</span><span class="s2"> </span><span class="nv">$TRAVIS_COMMIT</span><span class="s2">&quot;</span>
-        git push origin gh-pages
+        git push -f -q origin gh-pages &gt;/dev/null 2&gt;<span class="p">&amp;</span>1
     <span class="k">fi</span>
     <span class="k">fi</span>
 <span class="k">fi</span>
@@ -256,7 +257,7 @@ browser's back button to navigate back to
           <span class="pull-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-            
+             on 2016-06-13 16:11  
           </span>
         </div>
       </div>
